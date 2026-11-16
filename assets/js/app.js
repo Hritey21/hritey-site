@@ -156,6 +156,10 @@
     var parts = [], speaking = false;
 
     function spokenRef(ref) { return ref.replace(/(\d+):(\d+)/, '$1, verse $2'); }
+    // Spoken text only (the displayed verse stays exact KJV): avoid letter-by-letter or odd readings.
+    var SAY = [[/\bLORD\b/g, 'Lord'], [/\bGOD\b/g, 'God'], [/\bJESUS\b/g, 'Jesus'],
+      [/\bshew\b/g, 'show'], [/\bShew\b/g, 'Show'], [/\bshewed\b/g, 'showed'], [/\bsheweth\b/g, 'showeth']];
+    function speakable(t) { SAY.forEach(function (r) { t = t.replace(r[0], r[1]); }); return t; }
     function pickVoice() {
       var vs = synth.getVoices() || [];
       var en = vs.filter(function (v) { return /^en(-|_|$)/i.test(v.lang); });
@@ -190,8 +194,9 @@
       window.addEventListener('pagehide', stop);
     }
     return {
+      speakable: speakable,
       set: function (day) {
-        parts = day.verses.map(function (v) { return spokenRef(v.ref) + '. ' + v.text; });
+        parts = day.verses.map(function (v) { return spokenRef(v.ref) + '. ' + speakable(v.text); });
       },
       quizMode: function (on) { if (!ok) return; if (on) stop(); btn.disabled = on; }
     };
@@ -416,6 +421,7 @@
   }
 
   window.HRITEY = { ethiopianFor: ethiopianFor, pickDay: pickDay, themeFor: themeFor };
+  window.HRITEY.speakable = function (t) { return listen.speakable(t); };
 
   var today = new Date();
   var todayKey = isoDate(today);
