@@ -178,21 +178,23 @@
     }
     function stop() { if (ok) synth.cancel(); label(false); }
     function play() {
-      // iOS Safari: cancel() right before speak() can silently drop the queue, so only cancel if busy.
+      // Phones (iOS Safari, Android Chrome) are most reliable with ONE utterance,
+      // spoken synchronously inside the tap, using the device's default voice.
       if (synth.speaking || synth.pending) synth.cancel();
       if (synth.paused) synth.resume();
-      var voice = pickVoice();
-      parts.forEach(function (t, i) {
-        var u = new SpeechSynthesisUtterance(t);
-        u.lang = voice ? voice.lang : 'en-US';
-        if (voice) u.voice = voice;
-        u.rate = 0.88;
-        u.pitch = 1;
-        if (i === parts.length - 1) { u.onend = function () { label(false); }; }
-        u.onerror = function (e) { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; label(false); };
-        synth.speak(u);
-      });
+      var u = new SpeechSynthesisUtterance(parts.join('. ... '));
+      u.lang = 'en-US';
+      var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
+      if (!mobile) { var voice = pickVoice(); if (voice) { u.voice = voice; u.lang = voice.lang; } }
+      u.rate = mobile ? 0.95 : 0.88;
+      u.pitch = 1;
+      u.volume = 1;
+      u.onend = function () { label(false); };
+      u.onerror = function (e) { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; label(false); };
+      synth.speak(u);
       label(true);
+      // iOS sometimes leaves the engine paused; nudge it.
+      setTimeout(function () { if (synth.paused) synth.resume(); }, 250);
     }
     if (ok) {
       btn.hidden = false;
