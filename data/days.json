@@ -1,50 +1,55 @@
 {
-  "_readme": "One entry per date (YYYY-MM-DD). verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source. Shown under the verses only when filled in (the approved v13 design has no commentary line). See README.md.",
+  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. days: one entry per date (YYYY-MM-DD). side: internal note on which side of the week's theme the day covers (not shown). verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source; shown under the verses only when filled in. See README.md.",
+  "weeks": {
+    "2026-11-15": {
+      "theme": "Joy"
+    }
+  },
   "days": {
     "2026-11-15": {
-      "theme": "The Good Shepherd",
+      "side": "Joy in God's presence",
       "verses": [
         {
-          "ref": "Psalm 23:1",
-          "text": "The LORD is my shepherd; I shall not want."
+          "ref": "Psalm 16:11",
+          "text": "Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore."
         },
         {
-          "ref": "John 10:11",
-          "text": "I am the good shepherd: the good shepherd giveth his life for the sheep."
+          "ref": "Acts 2:28",
+          "text": "Thou hast made known to me the ways of life; thou shalt make me full of joy with thy countenance."
         },
         {
-          "ref": "John 10:14",
-          "text": "I am the good shepherd, and know my sheep, and am known of mine."
+          "ref": "Romans 15:13",
+          "text": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "In Psalm 23:1, who is my shepherd?",
+          "q": "In Psalm 16:11, what is in God’s presence?",
           "choices": [
-            "The LORD",
-            "A king",
-            "An angel"
+            "Fulness of joy",
+            "Great fear",
+            "Silence"
           ],
           "answer": 0
         },
         {
           "verse": 1,
-          "q": "What does the good shepherd give for the sheep?",
+          "q": "In Acts 2:28, God makes me full of joy with his…",
           "choices": [
-            "His staff",
-            "His life",
-            "His bread"
+            "gifts",
+            "countenance",
+            "angels"
           ],
           "answer": 1
         },
         {
           "verse": 2,
-          "q": "The good shepherd knows his sheep, and…",
+          "q": "Romans 15:13: the God of hope fill you with all joy and…",
           "choices": [
-            "counts them every night",
-            "leads them to the sea",
-            "is known of his own"
+            "strength",
+            "wisdom",
+            "peace in believing"
           ],
           "answer": 2
         }
@@ -52,49 +57,49 @@
       "commentary": null
     },
     "2026-11-16": {
-      "theme": "By His Stripes",
+      "side": "The joy of salvation",
       "verses": [
         {
-          "ref": "Isaiah 53:5",
-          "text": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+          "ref": "Isaiah 12:3",
+          "text": "Therefore with joy shall ye draw water out of the wells of salvation."
         },
         {
-          "ref": "1 Peter 2:24",
-          "text": "Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed."
+          "ref": "Luke 2:10",
+          "text": "And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people."
         },
         {
-          "ref": "Romans 5:8",
-          "text": "But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."
+          "ref": "1 Peter 1:8",
+          "text": "Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory:"
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "In Isaiah 53:5, with his stripes we are…",
+          "q": "With joy shall ye draw water out of the wells of…",
           "choices": [
-            "judged",
-            "healed",
-            "forgotten"
-          ],
-          "answer": 1
-        },
-        {
-          "verse": 1,
-          "q": "In 1 Peter 2:24, where did Christ bear our sins?",
-          "choices": [
-            "In his own body on the tree",
-            "In the temple",
-            "On the mountain"
+            "salvation",
+            "Jacob",
+            "the city"
           ],
           "answer": 0
         },
         {
-          "verse": 2,
-          "q": "When did Christ die for us, according to Romans 5:8?",
+          "verse": 1,
+          "q": "In Luke 2:10, who brought good tidings of great joy?",
           "choices": [
-            "After we became righteous",
-            "When we asked him",
-            "While we were yet sinners"
+            "A shepherd",
+            "The angel",
+            "A king"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In 1 Peter 1:8, believers rejoice with joy unspeakable and full of…",
+          "choices": [
+            "song",
+            "light",
+            "glory"
           ],
           "answer": 2
         }
@@ -102,49 +107,49 @@
       "commentary": null
     },
     "2026-11-17": {
-      "theme": "In the Beginning",
+      "side": "Joy in trials",
       "verses": [
         {
-          "ref": "Genesis 1:1",
-          "text": "In the beginning God created the heaven and the earth."
+          "ref": "Psalm 30:5",
+          "text": "For his anger endureth but a moment; in his favour is life: weeping may endure for a night, but joy cometh in the morning."
         },
         {
-          "ref": "John 1:1",
-          "text": "In the beginning was the Word, and the Word was with God, and the Word was God."
+          "ref": "James 1:2",
+          "text": "My brethren, count it all joy when ye fall into divers temptations;"
         },
         {
-          "ref": "John 1:3",
-          "text": "All things were made by him; and without him was not any thing made that was made."
+          "ref": "1 Peter 4:13",
+          "text": "But rejoice, inasmuch as ye are partakers of Christ’s sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "What did God create in the beginning?",
+          "q": "Weeping may endure for a night, but joy cometh in the…",
           "choices": [
-            "The garden only",
-            "The heaven and the earth",
-            "The sea and the stars"
+            "evening",
+            "morning",
+            "spring"
           ],
           "answer": 1
         },
         {
           "verse": 1,
-          "q": "In John 1:1, the Word was with God, and the Word was…",
+          "q": "James 1:2: count it all joy when ye fall into divers…",
           "choices": [
-            "God",
-            "an angel",
-            "a prophet"
+            "temptations",
+            "places",
+            "waters"
           ],
           "answer": 0
         },
         {
           "verse": 2,
-          "q": "According to John 1:3, what was made without him?",
+          "q": "In 1 Peter 4:13, we rejoice as partakers of Christ’s…",
           "choices": [
-            "Only the night",
-            "The stars",
-            "Not any thing"
+            "table",
+            "kingdom",
+            "sufferings"
           ],
           "answer": 2
         }
@@ -152,49 +157,49 @@
       "commentary": null
     },
     "2026-11-18": {
-      "theme": "The Bread of Life",
+      "side": "Joy no one takes away",
       "verses": [
         {
-          "ref": "Psalm 78:24",
-          "text": "And had rained down manna upon them to eat, and had given them of the corn of heaven."
+          "ref": "Psalm 126:5",
+          "text": "They that sow in tears shall reap in joy."
         },
         {
-          "ref": "John 6:35",
-          "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."
+          "ref": "John 16:20",
+          "text": "Verily, verily, I say unto you, That ye shall weep and lament, but the world shall rejoice: and ye shall be sorrowful, but your sorrow shall be turned into joy."
         },
         {
-          "ref": "John 6:51",
-          "text": "I am the living bread which came down from heaven: if any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, which I will give for the life of the world."
+          "ref": "John 16:22",
+          "text": "And ye now therefore have sorrow: but I will see you again, and your heart shall rejoice, and your joy no man taketh from you."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "In Psalm 78:24, what did God rain down for them to eat?",
+          "q": "They that sow in tears shall reap in…",
           "choices": [
-            "Manna",
-            "Honey",
-            "Fruit"
+            "joy",
+            "sorrow",
+            "silence"
           ],
           "answer": 0
         },
         {
           "verse": 1,
-          "q": "Jesus said, “I am the bread of…”",
+          "q": "In John 16:20, your sorrow shall be turned into…",
           "choices": [
-            "heaven",
-            "life",
-            "the morning"
+            "peace",
+            "joy",
+            "strength"
           ],
           "answer": 1
         },
         {
           "verse": 2,
-          "q": "In John 6:51, whoever eats of the living bread shall…",
+          "q": "In John 16:22, who can take your joy from you?",
           "choices": [
-            "never be tired",
-            "be rich",
-            "live for ever"
+            "The world",
+            "Time",
+            "No man"
           ],
           "answer": 2
         }
@@ -202,49 +207,49 @@
       "commentary": null
     },
     "2026-11-19": {
-      "theme": "God With Us",
+      "side": "Joy in serving and giving",
       "verses": [
         {
-          "ref": "Isaiah 7:14",
-          "text": "Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel."
+          "ref": "Psalm 100:2",
+          "text": "Serve the LORD with gladness: come before his presence with singing."
         },
         {
-          "ref": "Matthew 1:23",
-          "text": "Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us."
+          "ref": "Acts 20:35",
+          "text": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive."
         },
         {
-          "ref": "Luke 1:31",
-          "text": "And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name JESUS."
+          "ref": "2 Corinthians 9:7",
+          "text": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "In Isaiah 7:14, what shall the son be called?",
+          "q": "Psalm 100:2: Serve the LORD with…",
           "choices": [
-            "David",
-            "Immanuel",
-            "Elijah"
+            "fear only",
+            "gladness",
+            "gold"
           ],
           "answer": 1
         },
         {
           "verse": 1,
-          "q": "In Matthew 1:23, what does Emmanuel mean?",
+          "q": "Acts 20:35: It is more blessed to give than to…",
           "choices": [
-            "God with us",
-            "King of kings",
-            "Prince of peace"
+            "receive",
+            "keep",
+            "borrow"
           ],
           "answer": 0
         },
         {
           "verse": 2,
-          "q": "In Luke 1:31, what name shall the son be given?",
+          "q": "In 2 Corinthians 9:7, God loveth a…",
           "choices": [
-            "John",
-            "Joseph",
-            "JESUS"
+            "rich giver",
+            "quiet giver",
+            "cheerful giver"
           ],
           "answer": 2
         }
@@ -252,49 +257,49 @@
       "commentary": null
     },
     "2026-11-20": {
-      "theme": "The Light",
+      "side": "Fullness of joy in Christ",
       "verses": [
         {
-          "ref": "Psalm 119:105",
-          "text": "Thy word is a lamp unto my feet, and a light unto my path."
+          "ref": "Nehemiah 8:10",
+          "text": "Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our Lord: neither be ye sorry; for the joy of the LORD is your strength."
         },
         {
-          "ref": "John 8:12",
-          "text": "Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."
+          "ref": "John 15:11",
+          "text": "These things have I spoken unto you, that my joy might remain in you, and that your joy might be full."
         },
         {
-          "ref": "Matthew 5:14",
-          "text": "Ye are the light of the world. A city that is set on an hill cannot be hid."
+          "ref": "1 John 1:4",
+          "text": "And these things write we unto you, that your joy may be full."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "Thy word is a lamp unto my…",
+          "q": "In Nehemiah 8:10, the joy of the LORD is your…",
           "choices": [
-            "house",
-            "feet",
-            "eyes"
-          ],
-          "answer": 1
-        },
-        {
-          "verse": 1,
-          "q": "In John 8:12, he that followeth Jesus shall have…",
-          "choices": [
-            "the light of life",
-            "great riches",
-            "a long road"
+            "strength",
+            "reward",
+            "song"
           ],
           "answer": 0
         },
         {
-          "verse": 2,
-          "q": "In Matthew 5:14, what cannot be hid?",
+          "verse": 1,
+          "q": "In John 15:11, Jesus spoke so that his joy might…",
           "choices": [
-            "A lamp under a bed",
-            "A star at night",
-            "A city that is set on an hill"
+            "be hidden",
+            "remain in you",
+            "come to an end"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In 1 John 1:4, these things are written that your joy may be…",
+          "choices": [
+            "new",
+            "known",
+            "full"
           ],
           "answer": 2
         }
@@ -302,49 +307,49 @@
       "commentary": null
     },
     "2026-11-21": {
-      "theme": "Love",
+      "side": "Rejoice always",
       "verses": [
         {
-          "ref": "Deuteronomy 6:5",
-          "text": "And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might."
+          "ref": "Psalm 118:24",
+          "text": "This is the day which the LORD hath made; we will rejoice and be glad in it."
         },
         {
-          "ref": "Matthew 22:37",
-          "text": "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind."
+          "ref": "Philippians 4:4",
+          "text": "Rejoice in the Lord alway: and again I say, Rejoice."
         },
         {
-          "ref": "Matthew 22:39",
-          "text": "And the second is like unto it, Thou shalt love thy neighbour as thyself."
+          "ref": "1 Thessalonians 5:16",
+          "text": "Rejoice evermore."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "In Deuteronomy 6:5, with how much of thine heart shalt thou love the LORD?",
+          "q": "This is the day which the LORD hath made; we will…",
           "choices": [
-            "All",
-            "Half",
-            "A little"
+            "rejoice and be glad in it",
+            "rest and sleep",
+            "wait for tomorrow"
           ],
           "answer": 0
         },
         {
           "verse": 1,
-          "q": "In Matthew 22:37: with all thy heart, and with all thy soul, and with all thy…",
+          "q": "In Philippians 4:4, how often should we rejoice in the Lord?",
           "choices": [
-            "strength",
-            "mind",
-            "voice"
+            "On feast days",
+            "Alway",
+            "When things go well"
           ],
           "answer": 1
         },
         {
           "verse": 2,
-          "q": "Thou shalt love thy neighbour as…",
+          "q": "1 Thessalonians 5:16 says, Rejoice…",
           "choices": [
-            "thy brother",
-            "thy friend",
-            "thyself"
+            "sometimes",
+            "tomorrow",
+            "evermore"
           ],
           "answer": 2
         }

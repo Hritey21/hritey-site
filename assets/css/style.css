@@ -37,6 +37,8 @@ a{color:inherit}
 
 main{padding:0 24px}
 .date{text-align:center;font-size:18px;margin:18px 0 16px;min-height:26px}
+.theme{text-align:center;font-variant:small-caps;letter-spacing:1.2px;font-size:17px;color:var(--ink-soft);margin:-12px 0 14px}
+.theme strong{font-weight:600;color:var(--ink)}
 .date .dot{margin:0 .45em}
 
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px}
@@ -48,7 +50,10 @@ main{padding:0 24px}
 .verse{padding:0}
 .verse + .verse{border-top:1.5px dashed var(--gold-soft);margin-top:12px;padding-top:14px}
 .verse .ref{font-size:19px;margin:0 0 4px}
-.verse blockquote{margin:0;font-style:italic;font-size:17.5px;line-height:1.55}
+.verse blockquote{margin:0;font-style:italic;font-size:17.5px;line-height:1.55;transition:filter .6s ease,opacity .6s ease}
+/* While the quiz runs, verse wording is blurred, unselectable and hidden from copy */
+.verses.blurred blockquote{filter:blur(7px);opacity:.75;-webkit-user-select:none;user-select:none;pointer-events:none}
+.quiz .link-btn{font:inherit;font-size:15px;background:none;border:0;color:var(--ink-soft);text-decoration:underline;cursor:pointer;margin-top:12px;display:block;margin-left:auto;margin-right:auto;padding:6px}
 .loading{text-align:center;color:var(--ink-soft);font-style:italic}
 
 .commentary{margin:18px 0 0;padding-top:14px;border-top:1.5px dashed var(--gold-soft);font-size:16.5px}

@@ -15,15 +15,30 @@ assets/js/app.js        date line (Gregorian + Ethiopian), loads today's entry, 
 assets/img/             public-domain icons (web-sized .webp), og.jpg share preview
 assets/fonts/           Crimson Text + Noto Serif Ethiopic (subset), OFL license
 favicon.png, apple-touch-icon.png
-CNAME, .nojekyll
+CNAME (add back when hritey.com DNS is switched), .nojekyll
 ```
+
+## Weekly theme
+
+The site has **one theme per week, Sunday to Saturday** (separate from the X post themes). Each day of the week brings 3 new verses that look at that theme from a different side. The theme shows small under the date as "This week: Joy" and is added to the share text.
+
+Themes live in `data/days.json` under `"weeks"`, keyed by the week's **Sunday** date:
+
+```json
+"weeks": {
+  "2026-11-15": { "theme": "Joy" },
+  "2026-11-22": { "theme": "Peace" }
+}
+```
+
+A day uses the latest week that starts on or before it. To add a week: add its Sunday to `"weeks"`, then add its 7 days (below). Each day may have a `side` note (internal only, not shown) naming which side of the theme it covers, e.g. `"side": "Joy in trials"`. During fasts and feasts the week's theme can follow the Church calendar.
 
 ## How to add a day
 
 1. Open `data/days.json`.
 2. Copy an existing day inside `"days"` and paste it with a new date key in `YYYY-MM-DD` format, e.g. `"2026-11-22"`. Keep the commas between entries correct (JSON has no trailing commas).
 3. Fill in:
-   - `theme`: a short internal label (not shown on the page).
+   - `side`: a short internal note on which side of the week's theme the day covers (not shown on the page).
    - `verses`: exactly 3, in order: 1 Old Testament verse, then 2 New Testament verses that quietly connect. `ref` like `"John 3:16"`, `text` copied **word for word from the KJV** (check it against a KJV source such as `https://bible-api.com/John%203:16?translation=kjv`). Write the divine name as `LORD` where the KJV prints it in small capitals.
    - `quiz`: 3 questions, one per verse. `verse` is the verse number in the list (0, 1, 2), `choices` are the options, and `answer` is the position of the right choice (0 = first, 1 = second, 2 = third). Mix up where the right answer sits.
    - `commentary`: leave `null`, or add a quote **only** from a Church Father before AD 451 that you have checked in a public-domain source:
@@ -38,6 +53,8 @@ CNAME, .nojekyll
      It appears under the verses only when filled in. Never invent or paraphrase a quote.
 4. Check the file is valid JSON (for example paste it into a JSON validator, or run `python3 -m json.tool data/days.json`).
 5. Commit and push. GitHub Pages updates in a minute or two.
+
+**Quiz:** when a visitor taps Start, the verse wording blurs (and can't be selected or copied) so answers come from memory. It clears at the score screen, on "Leave quiz", or if they leave the page.
 
 **Which day is shown:** the visitor's local date. If there is no entry for today, the page shows the latest entry before today (so the site never goes blank). Add days ahead of time.
 

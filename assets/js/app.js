@@ -45,13 +45,50 @@
   }
 
   // Today's entry, else the latest entry on or before today, else the latest entry overall.
+  // Returns the date key to use.
   function pickDay(days, key) {
-    if (days[key]) return days[key];
+    if (days[key]) return key;
     var keys = Object.keys(days).sort();
     var past = keys.filter(function (k) { return k <= key; });
-    var use = past.length ? past[past.length - 1] : keys[keys.length - 1];
-    return use ? days[use] : null;
+    return past.length ? past[past.length - 1] : (keys[keys.length - 1] || null);
   }
+
+  // Weekly theme: weeks are keyed by their Sunday; use the latest week starting on or before the day.
+  function themeFor(weeks, dayKey) {
+    var starts = Object.keys(weeks || {}).sort().filter(function (k) { return k <= dayKey; });
+    var w = starts.length ? weeks[starts[starts.length - 1]] : null;
+    return w && w.theme ? w.theme : '';
+  }
+
+  function renderTheme(theme) {
+    var box = $('theme');
+    box.textContent = '';
+    if (!theme) { box.hidden = true; return; }
+    box.appendChild(document.createTextNode('This week: '));
+    box.appendChild(el('strong', null, theme));
+    box.hidden = false;
+  }
+
+  // Blur the verse wording while the quiz runs, so answers come from memory.
+  function setBlur(on) {
+    var list = $('verses');
+    list.classList.toggle('blurred', on);
+    list.querySelectorAll('blockquote').forEach(function (b) {
+      if (on) b.setAttribute('aria-hidden', 'true'); else b.removeAttribute('aria-hidden');
+    });
+    if (on && window.getSelection) {
+      var sel = window.getSelection();
+      if (sel && list.contains(sel.anchorNode)) sel.removeAllRanges();
+    }
+  }
+  document.addEventListener('copy', function (e) {
+    var list = $('verses');
+    var sel = window.getSelection && window.getSelection();
+    if (list.classList.contains('blurred') && sel && sel.rangeCount &&
+        sel.getRangeAt(0).intersectsNode(list)) {
+      e.preventDefault();
+    }
+  });
 
   function renderVerses(day) {
     var list = $('verses');
@@ -74,15 +111,17 @@
     }
   }
 
-  function setupShare(day) {
+  function setupShare(day, theme) {
     var refs = day.verses.map(function (v) { return v.ref; });
-    var full = 'Today’s Bread (KJV)\n\n' + day.verses.map(function (v) {
+    var head = 'Today’s Bread (KJV)' + (theme ? '\nThis week: ' + theme : '');
+    var full = head + '\n\n' + day.verses.map(function (v) {
       return v.ref + ' — ' + v.text;
     }).join('\n\n');
     var withUrl = full + '\n\n' + SITE;
     var enc = encodeURIComponent;
     // X: full text if it fits in a post (links count as 23), otherwise the references only.
-    var xText = (full.length + 24 <= 280) ? full : 'Today’s Bread (KJV): ' + refs.join(' · ');
+    var xText = (full.length + 24 <= 280) ? full :
+      'Today’s Bread (KJV)' + (theme ? ' · This week: ' + theme : '') + '\n' + refs.join(' · ');
     $('share-whatsapp').href = 'https://wa.me/?text=' + enc(withUrl);
     $('share-x').href = 'https://x.com/intent/post?text=' + enc(xText) + '&url=' + enc(SITE);
     $('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + enc(SITE);
@@ -91,10 +130,26 @@
 
   function setupQuiz(day) {
     var quiz = $('quiz');
+    var introHTML = quiz.innerHTML;
     var qs = day.quiz || [];
-    var i = 0, score = 0;
+    var i = 0, score = 0, running = false;
 
-    function start() { i = 0; score = 0; show(); }
+    function start() { i = 0; score = 0; running = true; setBlur(true); show(); }
+
+    function leaveButton() {
+      var b = el('button', 'link-btn', 'Leave quiz');
+      b.type = 'button';
+      b.addEventListener('click', reset);
+      return b;
+    }
+
+    // Back to the intro card with the verses clear again.
+    function reset() {
+      running = false;
+      setBlur(false);
+      quiz.innerHTML = introHTML;
+      $('quiz-start').addEventListener('click', start);
+    }
 
     function show() {
       var q = qs[i];
@@ -114,6 +169,7 @@
         return b;
       });
       quiz.appendChild(wrap);
+      quiz.appendChild(leaveButton());
       buttons[0].focus({ preventScroll: true });
     }
 
@@ -125,6 +181,8 @@
         if (k === q.answer) b.classList.add('correct');
         else if (k === idx) b.classList.add('wrong');
       });
+      var old = quiz.querySelector('.link-btn');
+      if (old) old.remove();
       var r = el('div', 'reveal');
       r.appendChild(el('p', 'verdict', (right ? 'That’s right! ' : 'Not quite. ') + 'The answer is: ' + q.choices[q.answer] + '.'));
       r.appendChild(el('p', 'ref', v.ref));
@@ -135,10 +193,13 @@
       next.type = 'button';
       next.addEventListener('click', function () { if (last) done(); else { i++; show(); } });
       quiz.appendChild(next);
+      if (!last) quiz.appendChild(leaveButton());
       next.focus({ preventScroll: true });
     }
 
     function done() {
+      running = false;
+      setBlur(false);
       quiz.textContent = '';
       quiz.appendChild(el('h2', null, 'Today’s Quiz')).id = 'quiz-title';
       quiz.appendChild(el('p', 'score', 'You got ' + score + ' of ' + qs.length + '.'));
@@ -152,6 +213,9 @@
 
     if (!qs.length) { quiz.hidden = true; return; }
     $('quiz-start').addEventListener('click', start);
+    // If the visitor leaves mid-quiz (closes the tab, goes back/forward), never come back blurred.
+    window.addEventListener('pagehide', function () { if (running) reset(); });
+    window.addEventListener('pageshow', function (e) { if (e.persisted && running) reset(); });
   }
 
   function showError() {
@@ -166,14 +230,18 @@
   fetch('data/days.json', { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (data) {
-      var day = pickDay(data.days || {}, isoDate(today));
-      if (!day) throw new Error('no days');
+      var days = data.days || {};
+      var key = pickDay(days, isoDate(today));
+      if (!key) throw new Error('no days');
+      var day = days[key];
+      var theme = themeFor(data.weeks, key);
+      renderTheme(theme);
       renderVerses(day);
-      setupShare(day);
+      setupShare(day, theme);
       setupQuiz(day);
     })
     .catch(showError);
 
   // Exposed for tests only (no data leaves the page).
-  window.HRITEY = { ethiopianFor: ethiopianFor, pickDay: pickDay };
+  window.HRITEY = { ethiopianFor: ethiopianFor, pickDay: pickDay, themeFor: themeFor };
 })();

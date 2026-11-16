@@ -63,10 +63,11 @@
 
 <main>
   <p class="date" id="date" aria-live="polite"></p>
+  <p class="theme" id="theme" hidden></p>
 
   <section class="card bread" aria-labelledby="bread-title">
     <h2 class="bread-head" id="bread-title"><span class="eth" lang="ti">ዕለታዊ እንጀራ</span><span class="latin">Today’s Bread</span></h2>
-    <ol class="verses" id="verses"><li class="loading">Loading today’s bread…</li></ol>
+    <ol class="verses" id="verses" aria-live="off"><li class="loading">Loading today’s bread…</li></ol>
     <noscript><p class="loading">Please turn on JavaScript to see today’s verses.</p></noscript>
     <!-- Optional commentary (Church Fathers before AD 451 only, verified public-domain source). Shown only when the day has one. -->
     <div class="commentary" id="commentary" hidden></div>
@@ -74,7 +75,7 @@
 
   <section class="card quiz" id="quiz" aria-labelledby="quiz-title" aria-live="polite">
     <h2 id="quiz-title">Today’s Quiz</h2>
-    <p class="sub">3 questions on what you read</p>
+    <p class="sub">Hide His word in your heart, then begin.</p>
     <button class="btn" type="button" id="quiz-start">Start</button>
   </section>
 
