@@ -76,5 +76,5 @@ python3 -m http.server 8000
 
 ## Still to do
 
-- Footer links: TikTok and Instagram (@hriteyofficial) are linked. YouTube and Facebook show as "coming soon" (`#` placeholders marked `data-soon` in `index.html`; search for `TODO`).
+- Footer links: TikTok (@hriteyofficial) is linked. YouTube, Instagram and Facebook show as "coming soon" (`#` placeholders marked `data-soon` in `index.html`; search for `TODO`).
 - Commentary is `null` for every day so far (verified Church Father quotes not added yet; the approved design has no commentary line).
