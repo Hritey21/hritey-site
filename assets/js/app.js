@@ -91,7 +91,11 @@
     var seen = [], out = [];
     (text.match(/[A-Za-z]+/g) || []).forEach(function (w) {
       var k = w.toLowerCase();
-      if (glossary[k] && seen.indexOf(k) < 0) { seen.push(k); out.push(k + ': ' + glossary[k]); }
+      var g = glossary[k];
+      if (g && seen.indexOf(k) < 0) {
+        seen.push(k);
+        out.push(typeof g === 'object' ? (g.word || k) + ': ' + g.means : k + ': ' + g);
+      }
     });
     return out;
   }

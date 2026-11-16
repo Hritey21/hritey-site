@@ -1,5 +1,5 @@
 {
-  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. days: one entry per date (YYYY-MM-DD). side: the day's angle on the week's theme; shown small under 'This week: …' and as the 'Tomorrow:' teaser after the quiz. It must say only what the 3 verses say. verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source; shown under the verses only when filled in. See README.md. glossary: shared list of old KJV words and plain meanings; the page lists, under each verse, only the glossary words found in it.",
+  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. days: one entry per date (YYYY-MM-DD). side: the day's angle on the week's theme; shown small under 'This week: …' and as the 'Tomorrow:' teaser after the quiz. It must say only what the 3 verses say. verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source; shown under the verses only when filled in. See README.md. glossary: shared list of truly archaic KJV words and plain meanings (a value can be \"meaning\" or {\"word\": \"Shown form\", \"means\": \"meaning\"}); the page lists, under each verse, only the glossary words found in it.",
   "glossary": {
     "alway": "always",
     "believeth": "believes",
@@ -9,6 +9,10 @@
     "doth": "does",
     "endureth": "lasts",
     "evermore": "always, forever",
+    "ghost": {
+      "word": "Ghost",
+      "means": "Spirit"
+    },
     "hast": "have",
     "hath": "has",
     "inasmuch": "to the degree that",
