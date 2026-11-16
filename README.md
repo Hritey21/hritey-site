@@ -15,7 +15,7 @@ assets/js/app.js        date line (Gregorian + Ethiopian), loads today's entry, 
 assets/img/             public-domain icons (web-sized .webp), og.jpg share preview
 assets/fonts/           Crimson Text + Noto Serif Ethiopic (subset), OFL license
 favicon.png, apple-touch-icon.png
-CNAME (add back when hritey.com DNS is switched), .nojekyll
+CNAME (hritey.com), .nojekyll
 ```
 
 ## Weekly theme
