@@ -178,7 +178,9 @@
     }
     function stop() { if (ok) synth.cancel(); label(false); }
     function play() {
-      synth.cancel();
+      // iOS Safari: cancel() right before speak() can silently drop the queue, so only cancel if busy.
+      if (synth.speaking || synth.pending) synth.cancel();
+      if (synth.paused) synth.resume();
       var voice = pickVoice();
       parts.forEach(function (t, i) {
         var u = new SpeechSynthesisUtterance(t);
@@ -187,13 +189,15 @@
         u.rate = 0.88;
         u.pitch = 1;
         if (i === parts.length - 1) { u.onend = function () { label(false); }; }
-        u.onerror = function () { label(false); };
+        u.onerror = function (e) { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; label(false); };
         synth.speak(u);
       });
       label(true);
     }
     if (ok) {
       btn.hidden = false;
+      if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = function () {};
+      synth.getVoices();
       btn.addEventListener('click', function () { if (speaking) stop(); else play(); });
       window.addEventListener('pagehide', stop);
     }
