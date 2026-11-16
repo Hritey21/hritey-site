@@ -11,8 +11,10 @@ index.html              the page
 credits.html            icon, font and scripture credits
 data/days.json          the daily verses + quiz (edit this to add days)
 assets/css/style.css    styles
+audio/                  one MP3 reading per day (made by tools/make_audio.py)
+tools/make_audio.py     generates the audio for new days
 assets/js/app.js        date line (Gregorian + Ethiopian), loads today's entry, quiz, share links
-assets/img/             public-domain icons (web-sized .webp), og.jpg share preview
+assets/img/             public-domain icons (web-sized .webp), og-v2.jpg share preview
 assets/fonts/           Crimson Text + Noto Serif Ethiopic (subset), OFL license
 favicon.png, apple-touch-icon.png
 CNAME (hritey.com), .nojekyll
@@ -58,7 +60,7 @@ A day uses the latest week that starts on or before it. To add a week: add its S
 
 **Old-word help:** under each verse the page lists only the old words found in it, using the shared `"glossary"` at the top of `days.json` (e.g. `"thy": "your"`). Add a word there once and it works for every day. Verses ending in `:` or `;` (correct KJV) get a soft "…" mark from CSS; the text itself is unchanged.
 
-**Listen:** a small button reads the three verses with the phone's own voice (browser speech). Hidden if the browser can't speak. Soft-launch test.
+**Listen:** each day has a recorded reading in `audio/<date>.mp3` (the 3 verses with references, calm voice en-US-AndrewNeural, -10% rate, mono 48 kbps). It plays as a normal audio file, so it works on iPhone even with the silent switch on, and on Android. The button only shows when that day's file exists. **After adding days, run** `python3 tools/make_audio.py` (needs `pip install edge-tts` and ffmpeg). It creates audio only for days that don't have it yet (`--force` redoes all, or pass dates). Spoken text says "Lord" for LORD and "show" for shew; the verse shown on the page is never changed.
 
 **Picture:** "Share as picture" (or "Save picture" where the browser can't share files) draws today's bread as an image in the HRITEY style, on the visitor's device.
 

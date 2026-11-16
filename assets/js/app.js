@@ -152,63 +152,70 @@
         sel.getRangeAt(0).intersectsNode(list)) e.preventDefault();
   });
 
-  // ---- Listen (browser speech; soft-launch test) --------------------------
+  // ---- Listen: pre-recorded MP3 per day (audio/<date>.mp3) -----------------
+  // Plays through an HTML media element, so it works on iPhone with the silent
+  // switch on and on Android. Speech synthesis is only a fallback if the file fails.
   var listen = (function () {
     var btn = $('listen');
-    var synth = window.speechSynthesis;
-    var ok = !!(synth && window.SpeechSynthesisUtterance);
-    var parts = [], speaking = false;
+    var audio = null, src = '', parts = [], playing = false;
 
     function spokenRef(ref) { return ref.replace(/(\d+):(\d+)/, '$1, verse $2'); }
-    // Spoken text only (the displayed verse stays exact KJV): avoid letter-by-letter or odd readings.
+    // Spoken text only (the displayed verse stays exact KJV).
     var SAY = [[/\bLORD\b/g, 'Lord'], [/\bGOD\b/g, 'God'], [/\bJESUS\b/g, 'Jesus'],
       [/\bshew\b/g, 'show'], [/\bShew\b/g, 'Show'], [/\bshewed\b/g, 'showed'], [/\bsheweth\b/g, 'showeth']];
     function speakable(t) { SAY.forEach(function (r) { t = t.replace(r[0], r[1]); }); return t; }
-    function pickVoice() {
-      var vs = synth.getVoices() || [];
-      var en = vs.filter(function (v) { return /^en(-|_|$)/i.test(v.lang); });
-      var pref = en.filter(function (v) { return /en-(US|GB)/i.test(v.lang) && v.localService; });
-      return pref[0] || en[0] || null;
-    }
+
     function label(on) {
-      speaking = on;
+      playing = on;
       btn.setAttribute('aria-pressed', on ? 'true' : 'false');
       btn.querySelector('.lbl').textContent = on ? 'Stop' : 'Listen';
       btn.classList.toggle('on', on);
     }
-    function stop() { if (ok) synth.cancel(); label(false); }
-    function play() {
-      // Phones (iOS Safari, Android Chrome) are most reliable with ONE utterance,
-      // spoken synchronously inside the tap, using the device's default voice.
-      if (synth.speaking || synth.pending) synth.cancel();
-      if (synth.paused) synth.resume();
+    function speakFallback() {
+      var synth = window.speechSynthesis;
+      if (!synth || !window.SpeechSynthesisUtterance) { label(false); return; }
+      synth.cancel();
       var u = new SpeechSynthesisUtterance(parts.join('. ... '));
-      u.lang = 'en-US';
-      var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
-      if (!mobile) { var voice = pickVoice(); if (voice) { u.voice = voice; u.lang = voice.lang; } }
-      u.rate = mobile ? 0.95 : 0.88;
-      u.pitch = 1;
-      u.volume = 1;
-      u.onend = function () { label(false); };
-      u.onerror = function (e) { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; label(false); };
+      u.lang = 'en-US'; u.rate = 0.9;
+      u.onend = u.onerror = function () { label(false); };
       synth.speak(u);
+    }
+    function stop() {
+      if (audio) { audio.pause(); try { audio.currentTime = 0; } catch (e) {} }
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      label(false);
+    }
+    function play() {
+      // Created and started synchronously inside the tap (no awaits before play()).
+      if (!audio) {
+        audio = new Audio();
+        audio.preload = 'auto';
+        audio.setAttribute('playsinline', '');
+        audio.addEventListener('ended', function () { label(false); });
+      }
+      if (audio.getAttribute('data-src') !== src) { audio.src = src; audio.setAttribute('data-src', src); }
       label(true);
-      // iOS sometimes leaves the engine paused; nudge it.
-      setTimeout(function () { if (synth.paused) synth.resume(); }, 250);
+      var p = audio.play();
+      if (p && p.catch) p.catch(function (err) {
+        if (err && err.name === 'AbortError') return;
+        speakFallback();
+      });
     }
-    if (ok) {
-      btn.hidden = false;
-      if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = function () {};
-      synth.getVoices();
-      btn.addEventListener('click', function () { if (speaking) stop(); else play(); });
-      window.addEventListener('pagehide', stop);
-    }
+    btn.addEventListener('click', function () { if (playing) stop(); else play(); });
+    window.addEventListener('pagehide', stop);
+
     return {
       speakable: speakable,
-      set: function (day) {
+      set: function (day, key, version) {
         parts = day.verses.map(function (v) { return spokenRef(v.ref) + '. ' + speakable(v.text); });
+        src = 'audio/' + key + '.mp3' + (version ? '?v=' + encodeURIComponent(version) : '');
+        btn.hidden = true;
+        // Show the button only if this day's recording exists.
+        fetch(src, { method: 'HEAD', cache: 'no-cache' })
+          .then(function (r) { if (r.ok) btn.hidden = false; })
+          .catch(function () {});
       },
-      quizMode: function (on) { if (!ok) return; if (on) stop(); btn.disabled = on; }
+      quizMode: function (on) { if (on) stop(); btn.disabled = on; }
     };
   })();
 
@@ -449,7 +456,7 @@
       renderTheme(theme, day.side);
       renderNotice(key, todayKey);
       renderVerses(day, data.glossary);
-      listen.set(day);
+      listen.set(day, key, data.audio_version);
       setupShare(day, theme);
       setupQuiz(day, next && next.side);
     })
