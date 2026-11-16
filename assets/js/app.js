@@ -412,11 +412,23 @@
         t.appendChild(el('strong', null, nextSide));
         quiz.appendChild(t);
       }
-      var again = el('button', 'btn', 'Try again');
+      var perfect = score === qs.length;
+      var again = el('button', 'btn', perfect ? 'Share today’s bread' : 'Try again');
       again.type = 'button';
-      again.addEventListener('click', start);
+      again.addEventListener('click', perfect ? scrollToShare : start);
       quiz.appendChild(again);
       again.focus({ preventScroll: true });
+    }
+    function scrollToShare() {
+      var share = document.querySelector('.share');
+      if (!share) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      share.classList.remove('flash');
+      void share.offsetWidth;
+      share.classList.add('flash');
+      share.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      if (scrollToShare.timer) clearTimeout(scrollToShare.timer);
+      scrollToShare.timer = setTimeout(function () { share.classList.remove('flash'); }, 1800);
     }
 
     if (!qs.length) { quiz.hidden = true; return; }
