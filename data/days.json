@@ -1,0 +1,355 @@
+{
+  "_readme": "One entry per date (YYYY-MM-DD). verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source. Shown under the verses only when filled in (the approved v13 design has no commentary line). See README.md.",
+  "days": {
+    "2026-11-15": {
+      "theme": "The Good Shepherd",
+      "verses": [
+        {
+          "ref": "Psalm 23:1",
+          "text": "The LORD is my shepherd; I shall not want."
+        },
+        {
+          "ref": "John 10:11",
+          "text": "I am the good shepherd: the good shepherd giveth his life for the sheep."
+        },
+        {
+          "ref": "John 10:14",
+          "text": "I am the good shepherd, and know my sheep, and am known of mine."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 23:1, who is my shepherd?",
+          "choices": [
+            "The LORD",
+            "A king",
+            "An angel"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "What does the good shepherd give for the sheep?",
+          "choices": [
+            "His staff",
+            "His life",
+            "His bread"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "The good shepherd knows his sheep, and…",
+          "choices": [
+            "counts them every night",
+            "leads them to the sea",
+            "is known of his own"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    },
+    "2026-11-16": {
+      "theme": "By His Stripes",
+      "verses": [
+        {
+          "ref": "Isaiah 53:5",
+          "text": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+        },
+        {
+          "ref": "1 Peter 2:24",
+          "text": "Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed."
+        },
+        {
+          "ref": "Romans 5:8",
+          "text": "But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Isaiah 53:5, with his stripes we are…",
+          "choices": [
+            "judged",
+            "healed",
+            "forgotten"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In 1 Peter 2:24, where did Christ bear our sins?",
+          "choices": [
+            "In his own body on the tree",
+            "In the temple",
+            "On the mountain"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "When did Christ die for us, according to Romans 5:8?",
+          "choices": [
+            "After we became righteous",
+            "When we asked him",
+            "While we were yet sinners"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    },
+    "2026-11-17": {
+      "theme": "In the Beginning",
+      "verses": [
+        {
+          "ref": "Genesis 1:1",
+          "text": "In the beginning God created the heaven and the earth."
+        },
+        {
+          "ref": "John 1:1",
+          "text": "In the beginning was the Word, and the Word was with God, and the Word was God."
+        },
+        {
+          "ref": "John 1:3",
+          "text": "All things were made by him; and without him was not any thing made that was made."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "What did God create in the beginning?",
+          "choices": [
+            "The garden only",
+            "The heaven and the earth",
+            "The sea and the stars"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In John 1:1, the Word was with God, and the Word was…",
+          "choices": [
+            "God",
+            "an angel",
+            "a prophet"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "According to John 1:3, what was made without him?",
+          "choices": [
+            "Only the night",
+            "The stars",
+            "Not any thing"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    },
+    "2026-11-18": {
+      "theme": "The Bread of Life",
+      "verses": [
+        {
+          "ref": "Psalm 78:24",
+          "text": "And had rained down manna upon them to eat, and had given them of the corn of heaven."
+        },
+        {
+          "ref": "John 6:35",
+          "text": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst."
+        },
+        {
+          "ref": "John 6:51",
+          "text": "I am the living bread which came down from heaven: if any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, which I will give for the life of the world."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 78:24, what did God rain down for them to eat?",
+          "choices": [
+            "Manna",
+            "Honey",
+            "Fruit"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "Jesus said, “I am the bread of…”",
+          "choices": [
+            "heaven",
+            "life",
+            "the morning"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In John 6:51, whoever eats of the living bread shall…",
+          "choices": [
+            "never be tired",
+            "be rich",
+            "live for ever"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    },
+    "2026-11-19": {
+      "theme": "God With Us",
+      "verses": [
+        {
+          "ref": "Isaiah 7:14",
+          "text": "Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel."
+        },
+        {
+          "ref": "Matthew 1:23",
+          "text": "Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us."
+        },
+        {
+          "ref": "Luke 1:31",
+          "text": "And, behold, thou shalt conceive in thy womb, and bring forth a son, and shalt call his name JESUS."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Isaiah 7:14, what shall the son be called?",
+          "choices": [
+            "David",
+            "Immanuel",
+            "Elijah"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Matthew 1:23, what does Emmanuel mean?",
+          "choices": [
+            "God with us",
+            "King of kings",
+            "Prince of peace"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In Luke 1:31, what name shall the son be given?",
+          "choices": [
+            "John",
+            "Joseph",
+            "JESUS"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    },
+    "2026-11-20": {
+      "theme": "The Light",
+      "verses": [
+        {
+          "ref": "Psalm 119:105",
+          "text": "Thy word is a lamp unto my feet, and a light unto my path."
+        },
+        {
+          "ref": "John 8:12",
+          "text": "Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."
+        },
+        {
+          "ref": "Matthew 5:14",
+          "text": "Ye are the light of the world. A city that is set on an hill cannot be hid."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "Thy word is a lamp unto my…",
+          "choices": [
+            "house",
+            "feet",
+            "eyes"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In John 8:12, he that followeth Jesus shall have…",
+          "choices": [
+            "the light of life",
+            "great riches",
+            "a long road"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In Matthew 5:14, what cannot be hid?",
+          "choices": [
+            "A lamp under a bed",
+            "A star at night",
+            "A city that is set on an hill"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    },
+    "2026-11-21": {
+      "theme": "Love",
+      "verses": [
+        {
+          "ref": "Deuteronomy 6:5",
+          "text": "And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might."
+        },
+        {
+          "ref": "Matthew 22:37",
+          "text": "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind."
+        },
+        {
+          "ref": "Matthew 22:39",
+          "text": "And the second is like unto it, Thou shalt love thy neighbour as thyself."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Deuteronomy 6:5, with how much of thine heart shalt thou love the LORD?",
+          "choices": [
+            "All",
+            "Half",
+            "A little"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "In Matthew 22:37: with all thy heart, and with all thy soul, and with all thy…",
+          "choices": [
+            "strength",
+            "mind",
+            "voice"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "Thou shalt love thy neighbour as…",
+          "choices": [
+            "thy brother",
+            "thy friend",
+            "thyself"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": null
+    }
+  }
+}
