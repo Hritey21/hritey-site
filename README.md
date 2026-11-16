@@ -76,5 +76,5 @@ python3 -m http.server 8000
 
 ## Still to do
 
-- Footer links: planned handle @hriteyofficial. Replace the three `#` placeholders in `index.html` (search for `TODO`) and remove `data-soon` once the accounts exist.
+- Footer links: TikTok and Instagram (@hriteyofficial) are linked. YouTube (channel pending) and Facebook (Page link pending) are still `#` placeholders marked `data-soon` in `index.html` (search for `TODO`).
 - Commentary is `null` for every day so far (verified Church Father quotes not added yet; the approved design has no commentary line).
