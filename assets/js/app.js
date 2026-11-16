@@ -232,7 +232,7 @@
       'Today’s Bread (KJV)' + (theme ? ' · This week: ' + theme : '') + '\n' + refs.join(' · ');
     $('share-whatsapp').href = 'https://wa.me/?text=' + enc(full + '\n\n' + SITE);
     $('share-x').href = 'https://x.com/intent/post?text=' + enc(xText) + '&url=' + enc(SITE);
-    $('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + enc(SITE);
+    if ($('share-facebook')) $('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + enc(SITE);
     $('share-telegram').href = 'https://t.me/share/url?url=' + enc(SITE) + '&text=' + enc(full);
     setupPicture(day, theme, full);
   }
