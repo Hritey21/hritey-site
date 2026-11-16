@@ -39,6 +39,9 @@ main{padding:0 24px}
 .date{text-align:center;font-size:18px;margin:18px 0 16px;min-height:26px}
 .theme{text-align:center;font-variant:small-caps;letter-spacing:1.2px;font-size:17px;color:var(--ink-soft);margin:-12px 0 14px}
 .theme strong{font-weight:600;color:var(--ink)}
+.side{text-align:center;font-style:italic;font-size:16px;color:var(--ink-soft);margin:-10px 0 14px}
+.theme:not([hidden]) + .side{margin-top:-12px}
+.notice{text-align:center;font-size:15px;color:var(--brown);background:#f7ead8;border:1px solid var(--border);border-radius:10px;padding:6px 12px;margin:0 0 14px}
 .date .dot{margin:0 .45em}
 
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px}
@@ -52,8 +55,16 @@ main{padding:0 24px}
 .verse .ref{font-size:19px;margin:0 0 4px}
 .verse blockquote{margin:0;font-style:italic;font-size:17.5px;line-height:1.55;transition:filter .6s ease,opacity .6s ease}
 /* While the quiz runs, verse wording is blurred, unselectable and hidden from copy */
-.verses.blurred blockquote{filter:blur(7px);opacity:.75;-webkit-user-select:none;user-select:none;pointer-events:none}
-.quiz .link-btn{font:inherit;font-size:15px;background:none;border:0;color:var(--ink-soft);text-decoration:underline;cursor:pointer;margin-top:12px;display:block;margin-left:auto;margin-right:auto;padding:6px}
+.verse blockquote.cont::after{content:" …";color:var(--ink-faint);font-style:normal}
+.words{margin:5px 0 0;font-size:14.5px;line-height:1.4;color:var(--ink-faint);transition:filter .6s ease,opacity .6s ease}
+.verses.blurred .words,.verses.blurred blockquote{filter:blur(7px);opacity:.75;-webkit-user-select:none;user-select:none;pointer-events:none}
+.quiz .link-btn,.share .link-btn{font:inherit;font-size:15px;background:none;border:0;color:var(--ink-soft);text-decoration:underline;cursor:pointer;margin-top:12px;display:block;margin-left:auto;margin-right:auto;padding:6px}
+.listen{display:flex;align-items:center;gap:6px;margin:18px auto 0;font:inherit;font-size:15px;color:var(--brown);background:transparent;
+  border:1px solid var(--gold-soft);border-radius:999px;padding:4px 14px 5px 10px;cursor:pointer;min-height:34px}
+.listen svg{width:18px;height:18px;fill:currentColor}
+.listen.on{background:var(--brown);color:var(--cream);border-color:var(--brown)}
+.listen:disabled{opacity:.45;cursor:default}
+.listen[hidden]{display:none}
 .loading{text-align:center;color:var(--ink-soft);font-style:italic}
 
 .commentary{margin:18px 0 0;padding-top:14px;border-top:1.5px dashed var(--gold-soft);font-size:16.5px}
@@ -79,6 +90,11 @@ main{padding:0 24px}
 .reveal .verdict{font-weight:600;margin:0 0 4px}
 .reveal .ref{margin:8px 0 2px}
 .reveal blockquote{margin:0;font-style:italic;line-height:1.5}
+.tomorrow{margin:-4px 0 14px;font-size:16px;color:var(--ink-soft)}
+.tomorrow strong{color:var(--ink);font-weight:600}
+.share .picture{margin-top:10px}
+.share .picture[hidden]{display:none}
+.icon-btn[aria-disabled="true"]{cursor:default}
 .score{font-size:19px;margin:0 0 12px}
 
 .share{text-align:center;margin:30px 0 0}

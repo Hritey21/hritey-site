@@ -64,10 +64,13 @@
 <main>
   <p class="date" id="date" aria-live="polite"></p>
   <p class="theme" id="theme" hidden></p>
+  <p class="side" id="side" hidden></p>
+  <p class="notice" id="notice" role="status" hidden></p>
 
   <section class="card bread" aria-labelledby="bread-title">
     <h2 class="bread-head" id="bread-title"><span class="eth" lang="ti">ዕለታዊ እንጀራ</span><span class="latin">Today’s Bread</span></h2>
     <ol class="verses" id="verses" aria-live="off"><li class="loading">Loading today’s bread…</li></ol>
+    <button class="listen" type="button" id="listen" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="lbl">Listen</span></button>
     <noscript><p class="loading">Please turn on JavaScript to see today’s verses.</p></noscript>
     <!-- Optional commentary (Church Fathers before AD 451 only, verified public-domain source). Shown only when the day has one. -->
     <div class="commentary" id="commentary" hidden></div>
@@ -87,6 +90,7 @@
       <li><a class="icon-btn" id="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhritey.com" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a></li>
       <li><a class="icon-btn" id="share-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fhritey.com" target="_blank" rel="noopener noreferrer" aria-label="Share on Telegram"><svg><use href="#i-telegram"/></svg></a></li>
     </ul>
+    <button class="link-btn picture" type="button" id="share-picture" hidden>Share as picture</button>
   </section>
 
   <p class="tagline">Read. Reflect. Return tomorrow.</p>
@@ -94,11 +98,11 @@
 
 <footer>
   <p class="follow">Follow HRITEY</p>
-  <!-- TODO: replace the three '#' links with the real HRITEY YouTube, TikTok and Instagram URLs once the accounts are live. -->
+  <!-- TODO: planned handle @hriteyofficial. When the accounts are live, set href to https://www.youtube.com/@hriteyofficial, https://www.tiktok.com/@hriteyofficial, https://www.instagram.com/hriteyofficial/ and remove data-soon / aria-disabled / title. -->
   <ul class="icons">
-    <li><a class="icon-btn" href="#" aria-label="HRITEY on YouTube"><svg><use href="#i-youtube"/></svg></a></li>
-    <li><a class="icon-btn" href="#" aria-label="HRITEY on TikTok"><svg><use href="#i-tiktok"/></svg></a></li>
-    <li><a class="icon-btn" href="#" aria-label="HRITEY on Instagram"><svg><use href="#i-instagram"/></svg></a></li>
+    <li><a class="icon-btn" href="#" data-soon aria-disabled="true" title="Coming soon" aria-label="HRITEY on YouTube (coming soon)"><svg><use href="#i-youtube"/></svg></a></li>
+    <li><a class="icon-btn" href="#" data-soon aria-disabled="true" title="Coming soon" aria-label="HRITEY on TikTok (coming soon)"><svg><use href="#i-tiktok"/></svg></a></li>
+    <li><a class="icon-btn" href="#" data-soon aria-disabled="true" title="Coming soon" aria-label="HRITEY on Instagram (coming soon)"><svg><use href="#i-instagram"/></svg></a></li>
   </ul>
   <p class="tiny">We don’t collect or sell anything. No cookies, no tracking.</p>
   <p class="tiny"><a href="credits.html">Icons: public domain</a></p>

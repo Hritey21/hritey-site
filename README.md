@@ -31,16 +31,16 @@ Themes live in `data/days.json` under `"weeks"`, keyed by the week's **Sunday** 
 }
 ```
 
-A day uses the latest week that starts on or before it. To add a week: add its Sunday to `"weeks"`, then add its 7 days (below). Each day may have a `side` note (internal only, not shown) naming which side of the theme it covers, e.g. `"side": "Joy in trials"`. During fasts and feasts the week's theme can follow the Church calendar.
+A day uses the latest week that starts on or before it. To add a week: add its Sunday to `"weeks"`, then add its 7 days (below). Each day has a `side`: the day's angle on the theme, e.g. `"side": "Joy in trials"`. It shows small under "This week: …" and as "Tomorrow: …" on the quiz score screen the day before. It must say only what that day's three verses say. During fasts and feasts the week's theme can follow the Church calendar.
 
 ## How to add a day
 
 1. Open `data/days.json`.
 2. Copy an existing day inside `"days"` and paste it with a new date key in `YYYY-MM-DD` format, e.g. `"2026-11-22"`. Keep the commas between entries correct (JSON has no trailing commas).
 3. Fill in:
-   - `side`: a short internal note on which side of the week's theme the day covers (not shown on the page).
+   - `side`: the day's angle on the week's theme (shown on the page; see above).
    - `verses`: exactly 3, in order: 1 Old Testament verse, then 2 New Testament verses that quietly connect. `ref` like `"John 3:16"`, `text` copied **word for word from the KJV** (check it against a KJV source such as `https://bible-api.com/John%203:16?translation=kjv`). Write the divine name as `LORD` where the KJV prints it in small capitals.
-   - `quiz`: 3 questions, one per verse. `verse` is the verse number in the list (0, 1, 2), `choices` are the options, and `answer` is the position of the right choice (0 = first, 1 = second, 2 = third). Mix up where the right answer sits.
+   - `quiz`: 3 questions, one per verse. `verse` is the verse number in the list (0, 1, 2), `choices` are the options, and `answer` is the position of the right choice (0 = first, 1 = second, 2 = third). Mix up where the right answer sits (never 1st, 2nd, 3rd in order; question 3 not always last), keep choices about the same length, and word every question as `In <reference>, …?`.
    - `commentary`: leave `null`, or add a quote **only** from a Church Father before AD 451 that you have checked in a public-domain source:
      ```json
      "commentary": {
@@ -56,7 +56,13 @@ A day uses the latest week that starts on or before it. To add a week: add its S
 
 **Quiz:** when a visitor taps Start, the verse wording blurs (and can't be selected or copied) so answers come from memory. It clears at the score screen, on "Leave quiz", or if they leave the page.
 
-**Which day is shown:** the visitor's local date. If there is no entry for today, the page shows the latest entry before today (so the site never goes blank). Add days ahead of time.
+**Old-word help:** under each verse the page lists only the old words found in it, using the shared `"glossary"` at the top of `days.json` (e.g. `"thy": "your"`). Add a word there once and it works for every day. Verses ending in `:` or `;` (correct KJV) get a soft "…" mark from CSS; the text itself is unchanged.
+
+**Listen:** a small button reads the three verses with the phone's own voice (browser speech). Hidden if the browser can't speak. Soft-launch test.
+
+**Picture:** "Share as picture" (or "Save picture" where the browser can't share files) draws today's bread as an image in the HRITEY style, on the visitor's device.
+
+**Which day is shown:** the visitor's local date. If there is no entry for today, the page shows the latest entry before today (so the site never goes blank) with a small "New verses coming soon" notice. Add days ahead of time.
 
 ## Preview locally
 
@@ -70,5 +76,5 @@ python3 -m http.server 8000
 
 ## Still to do
 
-- Footer links: replace the three `#` placeholders in `index.html` (search for `TODO`) with the real YouTube, TikTok and Instagram URLs.
+- Footer links: planned handle @hriteyofficial. Replace the three `#` placeholders in `index.html` (search for `TODO`) and remove `data-soon` once the accounts exist.
 - Commentary is `null` for every day so far (verified Church Father quotes not added yet; the approved design has no commentary line).

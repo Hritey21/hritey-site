@@ -1,5 +1,36 @@
 {
-  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. days: one entry per date (YYYY-MM-DD). side: internal note on which side of the week's theme the day covers (not shown). verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source; shown under the verses only when filled in. See README.md.",
+  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. days: one entry per date (YYYY-MM-DD). side: the day's angle on the week's theme; shown small under 'This week: …' and as the 'Tomorrow:' teaser after the quiz. It must say only what the 3 verses say. verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source; shown under the verses only when filled in. See README.md. glossary: shared list of old KJV words and plain meanings; the page lists, under each verse, only the glossary words found in it.",
+  "glossary": {
+    "alway": "always",
+    "believeth": "believes",
+    "cometh": "comes",
+    "countenance": "face",
+    "divers": "various",
+    "doth": "does",
+    "endureth": "lasts",
+    "evermore": "forever",
+    "fulness": "fullness",
+    "hast": "have",
+    "hath": "has",
+    "inasmuch": "since",
+    "liberality": "generosity",
+    "loveth": "loves",
+    "partakers": "sharers",
+    "purposeth": "decides",
+    "saith": "says",
+    "shalt": "shall",
+    "shew": "show",
+    "taketh": "takes",
+    "thee": "you",
+    "thine": "your",
+    "thou": "you",
+    "thy": "your",
+    "tidings": "news",
+    "unto": "to",
+    "verily": "truly",
+    "wilt": "will",
+    "ye": "you (all)"
+  },
   "weeks": {
     "2026-11-15": {
       "theme": "Joy"
@@ -7,7 +38,7 @@
   },
   "days": {
     "2026-11-15": {
-      "side": "Joy in God's presence",
+      "side": "God fills us with joy",
       "verses": [
         {
           "ref": "Psalm 16:11",
@@ -27,31 +58,31 @@
           "verse": 0,
           "q": "In Psalm 16:11, what is in God’s presence?",
           "choices": [
+            "Holy fear",
             "Fulness of joy",
-            "Great fear",
-            "Silence"
-          ],
-          "answer": 0
-        },
-        {
-          "verse": 1,
-          "q": "In Acts 2:28, God makes me full of joy with his…",
-          "choices": [
-            "gifts",
-            "countenance",
-            "angels"
+            "Great silence"
           ],
           "answer": 1
         },
         {
-          "verse": 2,
-          "q": "Romans 15:13: the God of hope fill you with all joy and…",
+          "verse": 1,
+          "q": "In Acts 2:28, with what does God make me full of joy?",
           "choices": [
-            "strength",
-            "wisdom",
-            "peace in believing"
+            "His gifts",
+            "His angels",
+            "His countenance"
           ],
           "answer": 2
+        },
+        {
+          "verse": 2,
+          "q": "In Romans 15:13, the God of hope fills you with all joy and what?",
+          "choices": [
+            "Peace",
+            "Wisdom",
+            "Strength"
+          ],
+          "answer": 0
         }
       ],
       "commentary": null
@@ -64,44 +95,44 @@
           "text": "Therefore with joy shall ye draw water out of the wells of salvation."
         },
         {
-          "ref": "Luke 2:10",
-          "text": "And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people."
+          "ref": "Luke 1:47",
+          "text": "And my spirit hath rejoiced in God my Saviour."
         },
         {
-          "ref": "1 Peter 1:8",
-          "text": "Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory:"
+          "ref": "Luke 2:10",
+          "text": "And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people."
         }
       ],
       "quiz": [
         {
           "verse": 0,
-          "q": "With joy shall ye draw water out of the wells of…",
+          "q": "In Isaiah 12:3, from which wells do we draw water with joy?",
           "choices": [
-            "salvation",
-            "Jacob",
-            "the city"
+            "The wells of Jacob",
+            "The wells of the city",
+            "The wells of salvation"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 1,
+          "q": "In Luke 1:47, in whom does my spirit rejoice?",
+          "choices": [
+            "God my Saviour",
+            "The angels",
+            "The prophets"
           ],
           "answer": 0
         },
         {
-          "verse": 1,
-          "q": "In Luke 2:10, who brought good tidings of great joy?",
+          "verse": 2,
+          "q": "In Luke 2:10, what did the angel bring?",
           "choices": [
-            "A shepherd",
-            "The angel",
-            "A king"
+            "A warning",
+            "Good tidings",
+            "A new law"
           ],
           "answer": 1
-        },
-        {
-          "verse": 2,
-          "q": "In 1 Peter 1:8, believers rejoice with joy unspeakable and full of…",
-          "choices": [
-            "song",
-            "light",
-            "glory"
-          ],
-          "answer": 2
         }
       ],
       "commentary": null
@@ -125,39 +156,39 @@
       "quiz": [
         {
           "verse": 0,
-          "q": "Weeping may endure for a night, but joy cometh in the…",
+          "q": "In Psalm 30:5, when does joy come?",
           "choices": [
-            "evening",
-            "morning",
-            "spring"
-          ],
-          "answer": 1
-        },
-        {
-          "verse": 1,
-          "q": "James 1:2: count it all joy when ye fall into divers…",
-          "choices": [
-            "temptations",
-            "places",
-            "waters"
+            "In the morning",
+            "In the evening",
+            "In the spring"
           ],
           "answer": 0
         },
         {
-          "verse": 2,
-          "q": "In 1 Peter 4:13, we rejoice as partakers of Christ’s…",
+          "verse": 1,
+          "q": "In James 1:2, when should we count it all joy?",
           "choices": [
-            "table",
-            "kingdom",
-            "sufferings"
+            "In times of ease",
+            "In times of praise",
+            "In divers temptations"
           ],
           "answer": 2
+        },
+        {
+          "verse": 2,
+          "q": "In 1 Peter 4:13, we rejoice as partakers of what?",
+          "choices": [
+            "Christ’s kingdom",
+            "Christ’s sufferings",
+            "Christ’s table"
+          ],
+          "answer": 1
         }
       ],
       "commentary": null
     },
     "2026-11-18": {
-      "side": "Joy no one takes away",
+      "side": "Sorrow turned into joy",
       "verses": [
         {
           "ref": "Psalm 126:5",
@@ -175,33 +206,33 @@
       "quiz": [
         {
           "verse": 0,
-          "q": "They that sow in tears shall reap in…",
+          "q": "In Psalm 126:5, what do they that sow in tears reap?",
           "choices": [
-            "joy",
-            "sorrow",
-            "silence"
+            "Sorrow",
+            "Joy",
+            "Silence"
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "verse": 1,
-          "q": "In John 16:20, your sorrow shall be turned into…",
+          "q": "In John 16:20, what shall your sorrow be turned into?",
           "choices": [
-            "peace",
-            "joy",
-            "strength"
+            "Joy",
+            "Peace",
+            "Strength"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "verse": 2,
           "q": "In John 16:22, who can take your joy from you?",
           "choices": [
+            "No man",
             "The world",
-            "Time",
-            "No man"
+            "Time"
           ],
-          "answer": 2
+          "answer": 0
         }
       ],
       "commentary": null
@@ -214,8 +245,8 @@
           "text": "Serve the LORD with gladness: come before his presence with singing."
         },
         {
-          "ref": "Acts 20:35",
-          "text": "I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive."
+          "ref": "2 Corinthians 8:2",
+          "text": "How that in a great trial of affliction the abundance of their joy and their deep poverty abounded unto the riches of their liberality."
         },
         {
           "ref": "2 Corinthians 9:7",
@@ -225,39 +256,39 @@
       "quiz": [
         {
           "verse": 0,
-          "q": "Psalm 100:2: Serve the LORD with…",
+          "q": "In Psalm 100:2, how should we serve the LORD?",
           "choices": [
-            "fear only",
-            "gladness",
-            "gold"
+            "With silence",
+            "With gold",
+            "With gladness"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 1,
+          "q": "In 2 Corinthians 8:2, what did they have in a great trial of affliction?",
+          "choices": [
+            "Much fear",
+            "Abundance of joy",
+            "Great riches"
           ],
           "answer": 1
         },
         {
-          "verse": 1,
-          "q": "Acts 20:35: It is more blessed to give than to…",
+          "verse": 2,
+          "q": "In 2 Corinthians 9:7, what kind of giver does God love?",
           "choices": [
-            "receive",
-            "keep",
-            "borrow"
+            "A cheerful giver",
+            "A rich giver",
+            "A quiet giver"
           ],
           "answer": 0
-        },
-        {
-          "verse": 2,
-          "q": "In 2 Corinthians 9:7, God loveth a…",
-          "choices": [
-            "rich giver",
-            "quiet giver",
-            "cheerful giver"
-          ],
-          "answer": 2
         }
       ],
       "commentary": null
     },
     "2026-11-20": {
-      "side": "Fullness of joy in Christ",
+      "side": "The joy of the Lord",
       "verses": [
         {
           "ref": "Nehemiah 8:10",
@@ -275,31 +306,31 @@
       "quiz": [
         {
           "verse": 0,
-          "q": "In Nehemiah 8:10, the joy of the LORD is your…",
+          "q": "In Nehemiah 8:10, what is the joy of the LORD?",
           "choices": [
-            "strength",
-            "reward",
-            "song"
+            "Your strength",
+            "Your reward",
+            "Your song"
           ],
           "answer": 0
         },
         {
           "verse": 1,
-          "q": "In John 15:11, Jesus spoke so that his joy might…",
+          "q": "In John 15:11, what does Jesus want to remain in you?",
           "choices": [
-            "be hidden",
-            "remain in you",
-            "come to an end"
+            "His joy",
+            "His law",
+            "His fear"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "verse": 2,
-          "q": "In 1 John 1:4, these things are written that your joy may be…",
+          "q": "In 1 John 1:4, what may your joy be?",
           "choices": [
-            "new",
-            "known",
-            "full"
+            "New",
+            "Known",
+            "Full"
           ],
           "answer": 2
         }
@@ -325,33 +356,33 @@
       "quiz": [
         {
           "verse": 0,
-          "q": "This is the day which the LORD hath made; we will…",
+          "q": "In Psalm 118:24, what will we do in the day the LORD hath made?",
           "choices": [
-            "rejoice and be glad in it",
-            "rest and sleep",
-            "wait for tomorrow"
+            "Rest and wait",
+            "Sleep in peace",
+            "Rejoice and be glad"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "verse": 1,
           "q": "In Philippians 4:4, how often should we rejoice in the Lord?",
           "choices": [
             "On feast days",
-            "Alway",
-            "When things go well"
+            "Always",
+            "When all is well"
           ],
           "answer": 1
         },
         {
           "verse": 2,
-          "q": "1 Thessalonians 5:16 says, Rejoice…",
+          "q": "In 1 Thessalonians 5:16, how long should we rejoice?",
           "choices": [
-            "sometimes",
-            "tomorrow",
-            "evermore"
+            "Sometimes",
+            "Evermore",
+            "Until tomorrow"
           ],
-          "answer": 2
+          "answer": 1
         }
       ],
       "commentary": null
