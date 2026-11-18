@@ -130,15 +130,15 @@ footer .tiny + .tiny{margin-top:6px}
   .page{box-shadow:0 0 0 1px var(--border),0 10px 40px rgba(78,54,30,.08)}
 }
 
-/* Tablet: widen the reading column; phone layout below 768px is unchanged */
+/* Tablet and up: typography and chrome. Phone layout below 768px is unchanged. */
 @media (min-width:768px){
-  .page{max-width:640px}
-  .site-header{padding:16px 22px 14px}
-  .saints{gap:8px;margin-bottom:14px}
-  .saints li{flex-basis:56px}
-  .saints img{max-width:56px}
-  .saints .cross{flex-basis:46px}
-  .saints .cross svg{max-width:46px}
+  .page{max-width:740px}
+  .site-header{padding:16px 28px 14px}
+  .saints{gap:10px;margin-bottom:14px}
+  .saints li{flex-basis:58px}
+  .saints img{max-width:58px}
+  .saints .cross{flex-basis:48px}
+  .saints .cross svg{max-width:48px}
   .brand{gap:18px}
   .wordmark .latin{font-size:34px}
   .wordmark .eth{font-size:19px}
@@ -148,16 +148,22 @@ footer .tiny + .tiny{margin-top:6px}
   .date{font-size:20px;margin:22px 0 18px}
   .theme{font-size:18px}
   .side{font-size:17px}
-  .bread,.quiz{padding:28px 28px 30px}
+  /* Verse cards sit in a grid; the outer bread wrapper drops its card chrome */
+  .bread{background:transparent;border:0;padding:0}
+  .quiz{padding:28px 28px 30px;max-width:620px;margin-left:auto;margin-right:auto}
   .bread-head{margin-bottom:22px}
   .bread-head .eth{font-size:22px}
   .bread-head .latin{font-size:32px}
-  .verse + .verse{margin-top:16px;padding-top:16px}
-  .verse .ref{font-size:21px}
-  .verse blockquote{font-size:19.5px}
-  .words{font-size:15.5px}
-  .commentary{font-size:17.5px}
-  .listen{font-size:16px;padding:6px 16px 7px 12px;min-height:38px}
+  .verses{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;align-items:stretch}
+  .verse{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 22px 24px}
+  .verse + .verse{border-top:1px solid var(--border);margin-top:0;padding-top:22px}
+  /* Third verse keeps the same card width and sits centered on the second row */
+  .verse:nth-child(3){grid-column:1 / -1;width:calc((100% - 28px) / 2);justify-self:center}
+  .verse .ref{font-size:20px}
+  .verse blockquote{font-size:18.5px}
+  .words{font-size:15px}
+  .commentary{font-size:17.5px;margin-top:22px;padding:18px 22px 0;border-top:0}
+  .listen{font-size:16px;padding:6px 16px 7px 12px;min-height:38px;margin-top:22px}
   .quiz h2{font-size:26px}
   .quiz .sub{font-size:17px}
   .btn{font-size:17px;padding:8px 28px 9px;min-height:40px}
@@ -175,26 +181,32 @@ footer .tiny + .tiny{margin-top:6px}
   .credits h1{font-size:32px}
 }
 
-/* Desktop: a comfortable reading width, not edge-to-edge */
+/* Desktop and iPad landscape: a wide page with three verse cards in a row */
 @media (min-width:1024px){
-  .page{max-width:720px;box-shadow:0 0 0 1px var(--border),0 16px 56px rgba(78,54,30,.1)}
-  .site-header{padding:20px 32px 16px}
-  .saints li{flex-basis:62px}
-  .saints img{max-width:62px}
-  .saints .cross{flex-basis:50px}
-  .saints .cross svg{max-width:50px}
-  .wordmark .latin{font-size:38px;letter-spacing:1.6px}
-  .wordmark .eth{font-size:20px}
-  .theotokos{width:50px}
+  .page{max-width:1080px;box-shadow:0 0 0 1px var(--border),0 16px 56px rgba(78,54,30,.1)}
+  .site-header{padding:20px 40px 16px}
+  .saints{gap:12px}
+  .saints li{flex-basis:70px}
+  .saints img{max-width:70px}
+  .saints .cross{flex-basis:56px}
+  .saints .cross svg{max-width:56px}
+  .brand{gap:20px}
+  .wordmark .latin{font-size:40px;letter-spacing:1.6px}
+  .wordmark .eth{font-size:21px}
+  .theotokos{width:54px}
   .glory{font-size:15px}
   main{padding:0 40px}
   .date{font-size:21px;margin:24px 0 20px}
-  .bread,.quiz{padding:32px 36px 34px}
+  .quiz{padding:32px 36px 34px}
   .bread-head .eth{font-size:24px}
   .bread-head .latin{font-size:34px}
-  .verse .ref{font-size:22px}
-  .verse blockquote{font-size:20.5px;line-height:1.6}
-  .words{font-size:16px}
+  .verses{grid-template-columns:1fr 1fr 1fr;gap:24px}
+  .verse{padding:26px 24px 28px}
+  .verse + .verse{border-top:1px solid var(--border);padding-top:26px}
+  .verse:nth-child(3){grid-column:auto;width:auto;justify-self:stretch}
+  .verse .ref{font-size:20px}
+  .verse blockquote{font-size:18.5px;line-height:1.55}
+  .words{font-size:15px}
   .commentary{font-size:18px}
   .quiz h2{font-size:28px}
   .q-text{font-size:22px}
@@ -202,7 +214,7 @@ footer .tiny + .tiny{margin-top:6px}
   .btn{font-size:18px;padding:9px 32px 10px;min-height:44px}
   .tagline{font-size:21px}
   footer{padding:56px 40px 48px}
-  .credits{padding:44px 40px 56px;font-size:19px}
+  .credits{padding:44px 40px 56px;font-size:19px;max-width:740px;margin-left:auto;margin-right:auto}
   .credits h1{font-size:34px}
 }
 
