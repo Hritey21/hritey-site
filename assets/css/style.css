@@ -124,9 +124,86 @@ footer .soon{display:block;margin-top:5px;font-size:11px;line-height:1;letter-sp
 footer .tiny{color:var(--ink-faint);font-size:13.5px;margin:14px 0 0}
 footer .tiny + .tiny{margin-top:6px}
 
-/* Desktop: keep the phone column, add a gentle frame */
+/* Wider screens: a gentle frame around the column (unchanged below 700px) */
 @media (min-width:700px){
   body{background:#f3e6d4}
   .page{box-shadow:0 0 0 1px var(--border),0 10px 40px rgba(78,54,30,.08)}
 }
+
+/* Tablet: widen the reading column; phone layout below 768px is unchanged */
+@media (min-width:768px){
+  .page{max-width:640px}
+  .site-header{padding:16px 22px 14px}
+  .saints{gap:8px;margin-bottom:14px}
+  .saints li{flex-basis:56px}
+  .saints img{max-width:56px}
+  .saints .cross{flex-basis:46px}
+  .saints .cross svg{max-width:46px}
+  .brand{gap:18px}
+  .wordmark .latin{font-size:34px}
+  .wordmark .eth{font-size:19px}
+  .theotokos{width:44px}
+  .glory{font-size:14.5px;margin-top:12px}
+  main{padding:0 32px}
+  .date{font-size:20px;margin:22px 0 18px}
+  .theme{font-size:18px}
+  .side{font-size:17px}
+  .bread,.quiz{padding:28px 28px 30px}
+  .bread-head{margin-bottom:22px}
+  .bread-head .eth{font-size:22px}
+  .bread-head .latin{font-size:32px}
+  .verse + .verse{margin-top:16px;padding-top:16px}
+  .verse .ref{font-size:21px}
+  .verse blockquote{font-size:19.5px}
+  .words{font-size:15.5px}
+  .commentary{font-size:17.5px}
+  .listen{font-size:16px;padding:6px 16px 7px 12px;min-height:38px}
+  .quiz h2{font-size:26px}
+  .quiz .sub{font-size:17px}
+  .btn{font-size:17px;padding:8px 28px 9px;min-height:40px}
+  .q-count{font-size:16px}
+  .q-text{font-size:21px}
+  .choice{font-size:18px;padding:11px 16px;min-height:48px}
+  .share h2{font-size:20px}
+  .icon-btn{width:44px;height:44px}
+  .tagline{font-size:20px;margin-top:52px}
+  footer{padding:48px 32px 42px}
+  footer .follow{font-size:17px}
+  footer .icon-btn{width:34px;height:34px}
+  footer .tiny{font-size:14.5px}
+  .credits{padding:36px 32px 48px;font-size:18px}
+  .credits h1{font-size:32px}
+}
+
+/* Desktop: a comfortable reading width, not edge-to-edge */
+@media (min-width:1024px){
+  .page{max-width:720px;box-shadow:0 0 0 1px var(--border),0 16px 56px rgba(78,54,30,.1)}
+  .site-header{padding:20px 32px 16px}
+  .saints li{flex-basis:62px}
+  .saints img{max-width:62px}
+  .saints .cross{flex-basis:50px}
+  .saints .cross svg{max-width:50px}
+  .wordmark .latin{font-size:38px;letter-spacing:1.6px}
+  .wordmark .eth{font-size:20px}
+  .theotokos{width:50px}
+  .glory{font-size:15px}
+  main{padding:0 40px}
+  .date{font-size:21px;margin:24px 0 20px}
+  .bread,.quiz{padding:32px 36px 34px}
+  .bread-head .eth{font-size:24px}
+  .bread-head .latin{font-size:34px}
+  .verse .ref{font-size:22px}
+  .verse blockquote{font-size:20.5px;line-height:1.6}
+  .words{font-size:16px}
+  .commentary{font-size:18px}
+  .quiz h2{font-size:28px}
+  .q-text{font-size:22px}
+  .choice{font-size:19px;padding:12px 18px}
+  .btn{font-size:18px;padding:9px 32px 10px;min-height:44px}
+  .tagline{font-size:21px}
+  footer{padding:56px 40px 48px}
+  .credits{padding:44px 40px 56px;font-size:19px}
+  .credits h1{font-size:34px}
+}
+
 @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
