@@ -1,42 +1,88 @@
 {
-  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. days: one entry per date (YYYY-MM-DD). side: the day's angle on the week's theme; shown small under 'This week: …' and as the 'Tomorrow:' teaser after the quiz. It must say only what the 3 verses say. verses: 1 OT then 2 NT, KJV word for word. quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a Church Father before AD 451, verified in a public-domain source; shown under the verses only when filled in. See README.md. glossary: shared list of truly archaic KJV words and plain meanings (a value can be \"meaning\" or {\"word\": \"Shown form\", \"means\": \"meaning\"}); the page lists, under each verse, only the glossary words found in it.",
+  "_readme": "weeks: one theme per week, keyed by the week's SUNDAY (YYYY-MM-DD); shown as 'This week: <theme>' and in the share text. schedule: the planned rotation (theme + Sunday date). The page uses a scheduled theme once that week has daily entries, so the theme changes by itself each Sunday. days: one entry per date (YYYY-MM-DD). side: the day's angle on the week's theme; shown small under 'This week: …' and as the 'Tomorrow:' teaser after the quiz. It must say only what the 3 verses say. verses: 1 OT then 2 NT, copied word for word from the public-domain text (never print a translation label on the page). quiz: one question per verse ('verse' is the verse index, 'answer' is the index of the right choice). commentary: null, or {text, father, work, source_url} from a 1st–3rd century Church Father, verified in a public-domain source; shown under the verses only when filled in. See README.md. glossary: shared list of truly archaic words and plain meanings (a value can be \"meaning\" or {\"word\": \"Shown form\", \"means\": \"meaning\"}); the page lists, under each verse, only the glossary words found in it.",
   "glossary": {
+    "aforetime": "in times past",
     "alway": "always",
+    "art": "are",
     "believeth": "believes",
     "cometh": "comes",
     "countenance": "face",
+    "disquieted": "unsettled, restless",
     "divers": "various",
     "doth": "does",
     "endureth": "lasts",
+    "entereth": "enters",
     "evermore": "always, forever",
     "ghost": {
       "word": "Ghost",
       "means": "Spirit"
     },
+    "giveth": "gives",
     "hast": "have",
     "hath": "has",
     "inasmuch": "to the degree that",
+    "instant": "constant, faithful",
     "liberality": "generosity",
+    "lively": "living",
+    "loins": "the waist (here, the mind made ready)",
     "loveth": "loves",
+    "maketh": "makes",
+    "offend": "cause to stumble",
     "partakers": "sharers",
+    "passeth": "passes",
     "purposeth": "decides",
     "saith": "says",
+    "seeth": "sees",
     "shalt": "will",
     "shew": "show",
+    "stayed": "fixed, resting",
+    "stedfast": "steadfast",
     "taketh": "takes",
     "thee": "you",
     "thine": "your, yours",
     "thou": "you",
     "thy": "your",
     "tidings": "news",
+    "trusteth": "trusts",
     "unto": "to",
     "verily": "truly",
     "wilt": "will",
     "ye": "you (all)"
   },
+  "schedule": {
+    "start": "2026-11-22",
+    "themes": [
+      {
+        "theme": "Hope",
+        "sunday": "2026-11-22"
+      },
+      {
+        "theme": "Peace",
+        "sunday": "2026-11-29"
+      },
+      {
+        "theme": "Light in the Waiting",
+        "sunday": "2026-12-06"
+      },
+      {
+        "theme": "Trust",
+        "sunday": "2026-12-13"
+      },
+      {
+        "theme": "Gratitude",
+        "sunday": "2026-12-20"
+      }
+    ]
+  },
   "weeks": {
     "2026-11-15": {
       "theme": "Joy"
+    },
+    "2026-11-22": {
+      "theme": "Hope"
+    },
+    "2026-11-29": {
+      "theme": "Peace"
     }
   },
   "days": {
@@ -389,6 +435,776 @@
         }
       ],
       "commentary": null
+    },
+    "2026-11-22": {
+      "side": "Our hope is in the Lord",
+      "verses": [
+        {
+          "ref": "Psalm 39:7",
+          "text": "And now, Lord, what wait I for? my hope is in thee."
+        },
+        {
+          "ref": "Romans 15:4",
+          "text": "For whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope."
+        },
+        {
+          "ref": "1 Timothy 1:1",
+          "text": "Paul, an apostle of Jesus Christ by the commandment of God our Saviour, and Lord Jesus Christ, which is our hope;"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 39:7, where is my hope?",
+          "choices": [
+            "In myself",
+            "In thee",
+            "In tomorrow"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Romans 15:4, the things written aforetime were written for what?",
+          "choices": [
+            "Our learning",
+            "Our judgment",
+            "Our praise"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In 1 Timothy 1:1, who is our hope?",
+          "choices": [
+            "The law of Moses",
+            "An earthly king",
+            "Lord Jesus Christ"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": {
+        "text": "Having then this hope, let our souls be bound to Him who is faithful in His promises, and just in His judgments.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 27",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
+    },
+    "2026-11-23": {
+      "side": "Hope that is not ashamed",
+      "verses": [
+        {
+          "ref": "Psalm 31:24",
+          "text": "Be of good courage, and he shall strengthen your heart, all ye that hope in the LORD."
+        },
+        {
+          "ref": "Romans 5:5",
+          "text": "And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the Holy Ghost which is given unto us."
+        },
+        {
+          "ref": "Hebrews 6:11",
+          "text": "And we desire that every one of you do shew the same diligence to the full assurance of hope unto the end:"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 31:24, whose heart shall he strengthen?",
+          "choices": [
+            "All ye that hope in the LORD",
+            "They that trust in riches",
+            "The proud of heart"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "In Romans 5:5, hope maketh not what?",
+          "choices": [
+            "Weary",
+            "Afraid",
+            "Ashamed"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 2,
+          "q": "In Hebrews 6:11, we should shew the same diligence to what?",
+          "choices": [
+            "The full assurance of hope",
+            "A name among men",
+            "An easy life"
+          ],
+          "answer": 0
+        }
+      ],
+      "commentary": {
+        "text": "Let us then continually persevere in our hope, and the earnest of our righteousness, which is Jesus Christ, who bore our sins in His own body on the tree, who did no sin, neither was guile found in His mouth, but endured all things for us, that we might live in Him.",
+        "father": "St. Polycarp",
+        "work": "Epistle to the Philippians, Chapter 8",
+        "source_url": "https://www.newadvent.org/fathers/0136.htm"
+      }
+    },
+    "2026-11-24": {
+      "side": "We wait in hope",
+      "verses": [
+        {
+          "ref": "Psalm 130:5",
+          "text": "I wait for the LORD, my soul doth wait, and in his word do I hope."
+        },
+        {
+          "ref": "Romans 8:24",
+          "text": "For we are saved by hope: but hope that is seen is not hope: for what a man seeth, why doth he yet hope for?"
+        },
+        {
+          "ref": "Romans 8:25",
+          "text": "But if we hope for that we see not, then do we with patience wait for it."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 130:5, in his word do I what?",
+          "choices": [
+            "Fear",
+            "Sleep",
+            "Hope"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 1,
+          "q": "In Romans 8:24, we are saved by what?",
+          "choices": [
+            "Hope",
+            "Sight",
+            "Works"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In Romans 8:25, if we hope for that we see not, then do we with patience what?",
+          "choices": [
+            "Fear it",
+            "Wait for it",
+            "Forget it"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "Let us therefore earnestly strive to be found in the number of those that wait for Him, in order that we may share in His promised gifts.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 35",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
+    },
+    "2026-11-25": {
+      "side": "A living hope",
+      "verses": [
+        {
+          "ref": "Lamentations 3:24",
+          "text": "The LORD is my portion, saith my soul; therefore will I hope in him."
+        },
+        {
+          "ref": "1 Peter 1:3",
+          "text": "Blessed be the God and Father of our Lord Jesus Christ, which according to his abundant mercy hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead,"
+        },
+        {
+          "ref": "1 Peter 1:13",
+          "text": "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ;"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Lamentations 3:24, the LORD is my what?",
+          "choices": [
+            "Portion",
+            "Burden",
+            "Puzzle"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "In 1 Peter 1:3, he hath begotten us again unto a lively hope by what?",
+          "choices": [
+            "Our good works",
+            "The resurrection of Jesus Christ",
+            "The wisdom of men"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In 1 Peter 1:13, hope to the end for the grace brought unto you at what?",
+          "choices": [
+            "The revelation of Jesus Christ",
+            "The rising of the sun",
+            "The praise of men"
+          ],
+          "answer": 0
+        }
+      ],
+      "commentary": {
+        "text": "As our Master, therefore, did not at once depart, taking flight [to heaven], but awaited the time of His resurrection prescribed by the Father, which had been also shown forth through Jonas, and rising again after three days was taken up [to heaven]; so ought we also to await the time of our resurrection prescribed by God and foretold by the prophets, and so, rising, be taken up, as many as the Lord shall account worthy of this [privilege].",
+        "father": "St. Irenaeus of Lyons",
+        "work": "Against Heresies, Book 5, Chapter 31",
+        "source_url": "https://www.newadvent.org/fathers/0103531.htm"
+      }
+    },
+    "2026-11-26": {
+      "side": "Hope in his mercy",
+      "verses": [
+        {
+          "ref": "Psalm 147:11",
+          "text": "The LORD taketh pleasure in them that fear him, in those that hope in his mercy."
+        },
+        {
+          "ref": "1 Peter 1:21",
+          "text": "Who by him do believe in God, that raised him up from the dead, and gave him glory; that your faith and hope might be in God."
+        },
+        {
+          "ref": "2 Thessalonians 2:16",
+          "text": "Now our Lord Jesus Christ himself, and God, even our Father, which hath loved us, and hath given us everlasting consolation and good hope through grace,"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 147:11, those that fear him hope in what?",
+          "choices": [
+            "His riches",
+            "Their strength",
+            "His mercy"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 1,
+          "q": "In 1 Peter 1:21, your faith and hope might be in whom?",
+          "choices": [
+            "Angels",
+            "Ourselves",
+            "God"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 2,
+          "q": "In 2 Thessalonians 2:16, God hath given us good hope through what?",
+          "choices": [
+            "Glory",
+            "Grace",
+            "Gold"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "But He who raised Him up from the dead will raise us up also, if we do His will, and walk in His commandments, and love what He loved.",
+        "father": "St. Polycarp",
+        "work": "Epistle to the Philippians, Chapter 2",
+        "source_url": "https://www.newadvent.org/fathers/0136.htm"
+      }
+    },
+    "2026-11-27": {
+      "side": "Hope, an anchor of the soul",
+      "verses": [
+        {
+          "ref": "Psalm 42:5",
+          "text": "Why art thou cast down, O my soul? and why art thou disquieted in me? hope thou in God: for I shall yet praise him for the help of his countenance."
+        },
+        {
+          "ref": "Hebrews 6:19",
+          "text": "Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil;"
+        },
+        {
+          "ref": "Colossians 1:27",
+          "text": "To whom God would make known what is the riches of the glory of this mystery among the Gentiles; which is Christ in you, the hope of glory:"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 42:5, the soul is told to hope in whom?",
+          "choices": [
+            "Men",
+            "God",
+            "The morning"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Hebrews 6:19, which hope we have as what of the soul?",
+          "choices": [
+            "An anchor",
+            "A shadow",
+            "A burden"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In Colossians 1:27, what is Christ in you called?",
+          "choices": [
+            "The light of men",
+            "The hope of glory",
+            "The end of the law"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "Who, in the midst of these things, is trembling and sad, except he who is without hope and faith?",
+        "father": "St. Cyprian of Carthage",
+        "work": "Treatise 7, On the Mortality, Chapter 2",
+        "source_url": "https://www.newadvent.org/fathers/050707.htm"
+      }
+    },
+    "2026-11-28": {
+      "side": "The blessed hope of his appearing",
+      "verses": [
+        {
+          "ref": "Psalm 130:7",
+          "text": "Let Israel hope in the LORD: for with the LORD there is mercy, and with him is plenteous redemption."
+        },
+        {
+          "ref": "Romans 12:12",
+          "text": "Rejoicing in hope; patient in tribulation; continuing instant in prayer;"
+        },
+        {
+          "ref": "Titus 2:13",
+          "text": "Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ;"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 130:7, with him is what?",
+          "choices": [
+            "Hidden treasure",
+            "Plenteous redemption",
+            "A new law"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Romans 12:12, we are told to be rejoicing in what?",
+          "choices": [
+            "Riches",
+            "Honor",
+            "Hope"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 2,
+          "q": "In Titus 2:13, we are looking for the glorious appearing of whom?",
+          "choices": [
+            "The great God and our Saviour Jesus Christ",
+            "The kings of the earth",
+            "The angels in heaven"
+          ],
+          "answer": 0
+        }
+      ],
+      "commentary": {
+        "text": "Of a truth, soon and suddenly shall His will be accomplished, as the Scripture also bears witness, saying, Speedily will He come, and will not tarry; and, The Lord shall suddenly come to His temple, even the Holy One, for whom you look.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 23",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
+    },
+    "2026-11-29": {
+      "side": "The Lord gives his peace",
+      "verses": [
+        {
+          "ref": "Isaiah 26:3",
+          "text": "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee."
+        },
+        {
+          "ref": "John 14:27",
+          "text": "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid."
+        },
+        {
+          "ref": "2 Thessalonians 3:16",
+          "text": "Now the Lord of peace himself give you peace always by all means. The Lord be with you all."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Isaiah 26:3, whose mind is kept in perfect peace?",
+          "choices": [
+            "He whose mind is stayed on thee",
+            "He who trusts in riches",
+            "He who has no trouble"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "In John 14:27, the peace Jesus gives is not as what?",
+          "choices": [
+            "The law giveth",
+            "The world giveth",
+            "The angels giveth"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In 2 Thessalonians 3:16, the Lord of peace himself give you peace how?",
+          "choices": [
+            "Once in a while",
+            "Always by all means",
+            "Only in sleep"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "Nothing is more precious than peace, by which all war, both in heaven and earth, is brought to an end.",
+        "father": "St. Ignatius of Antioch",
+        "work": "Epistle to the Ephesians, Chapter 13",
+        "source_url": "https://www.newadvent.org/fathers/0104.htm"
+      }
+    },
+    "2026-11-30": {
+      "side": "Peace with God through Christ",
+      "verses": [
+        {
+          "ref": "Isaiah 53:5",
+          "text": "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+        },
+        {
+          "ref": "Romans 5:1",
+          "text": "Therefore being justified by faith, we have peace with God through our Lord Jesus Christ:"
+        },
+        {
+          "ref": "Colossians 1:20",
+          "text": "And, having made peace through the blood of his cross, by him to reconcile all things unto himself; by him, I say, whether they be things in earth, or things in heaven."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Isaiah 53:5, what was upon him?",
+          "choices": [
+            "The crown of the earth",
+            "The chastisement of our peace",
+            "The wealth of the nations"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Romans 5:1, being justified by faith, we have peace with God through whom?",
+          "choices": [
+            "Our own works",
+            "The law of Moses",
+            "Our Lord Jesus Christ"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 2,
+          "q": "In Colossians 1:20, he made peace through what?",
+          "choices": [
+            "The blood of his cross",
+            "The wisdom of men",
+            "The power of kings"
+          ],
+          "answer": 0
+        }
+      ],
+      "commentary": {
+        "text": "Thus a profound and abundant peace was given to you all, and you had an insatiable desire for doing good, while a full outpouring of the Holy Spirit was upon you all.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 2",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
+    },
+    "2026-12-01": {
+      "side": "Peace in him, even in trouble",
+      "verses": [
+        {
+          "ref": "Psalm 29:11",
+          "text": "The LORD will give strength unto his people; the LORD will bless his people with peace."
+        },
+        {
+          "ref": "John 16:33",
+          "text": "These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world."
+        },
+        {
+          "ref": "Philippians 4:7",
+          "text": "And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 29:11, the LORD will bless his people with what?",
+          "choices": [
+            "Riches",
+            "Honour",
+            "Peace"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 1,
+          "q": "In John 16:33, in the world ye shall have tribulation: but be of good cheer; for what?",
+          "choices": [
+            "The storm is over",
+            "I have overcome the world",
+            "Men will praise you"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In Philippians 4:7, the peace of God shall keep your hearts and minds through whom?",
+          "choices": [
+            "The prophets alone",
+            "Your own wisdom",
+            "Christ Jesus"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": {
+        "text": "Let us then be imitators of His patience; and if we suffer for His name's sake, let us glorify Him.",
+        "father": "St. Polycarp",
+        "work": "Epistle to the Philippians, Chapter 8",
+        "source_url": "https://www.newadvent.org/fathers/0136.htm"
+      }
+    },
+    "2026-12-02": {
+      "side": "Seek peace, and follow it",
+      "verses": [
+        {
+          "ref": "Psalm 34:14",
+          "text": "Depart from evil, and do good; seek peace, and pursue it."
+        },
+        {
+          "ref": "Romans 14:19",
+          "text": "Let us therefore follow after the things which make for peace, and things wherewith one may edify another."
+        },
+        {
+          "ref": "Hebrews 12:14",
+          "text": "Follow peace with all men, and holiness, without which no man shall see the Lord:"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 34:14, after we seek peace, what should we do?",
+          "choices": [
+            "Forget it",
+            "Hide it",
+            "Pursue it"
+          ],
+          "answer": 2
+        },
+        {
+          "verse": 1,
+          "q": "In Romans 14:19, let us follow after the things which make for what?",
+          "choices": [
+            "Peace",
+            "Strife",
+            "Fame"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In Hebrews 12:14, follow peace with all men, and what else?",
+          "choices": [
+            "Riches",
+            "Holiness",
+            "Silence"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "Wherefore, having so many great and glorious examples set before us, let us turn again to the practice of that peace which from the beginning was the mark set before us.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 19",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
+    },
+    "2026-12-03": {
+      "side": "The fruit of righteousness is peace",
+      "verses": [
+        {
+          "ref": "Isaiah 32:17",
+          "text": "And the work of righteousness shall be peace; and the effect of righteousness quietness and assurance for ever."
+        },
+        {
+          "ref": "Matthew 5:9",
+          "text": "Blessed are the peacemakers: for they shall be called the children of God."
+        },
+        {
+          "ref": "James 3:18",
+          "text": "And the fruit of righteousness is sown in peace of them that make peace."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Isaiah 32:17, the work of righteousness shall be what?",
+          "choices": [
+            "Fear",
+            "Peace",
+            "Silence"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Matthew 5:9, the peacemakers shall be called what?",
+          "choices": [
+            "The children of God",
+            "The teachers of men",
+            "The princes of earth"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In James 3:18, the fruit of righteousness is sown in peace of whom?",
+          "choices": [
+            "Them that love riches",
+            "Them that make peace",
+            "Them that seek praise"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "Let us cleave, therefore, to those who cultivate peace with godliness, and not to those who hypocritically profess to desire it.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 15",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
+    },
+    "2026-12-04": {
+      "side": "Christ is our peace",
+      "verses": [
+        {
+          "ref": "Psalm 119:165",
+          "text": "Great peace have they which love thy law: and nothing shall offend them."
+        },
+        {
+          "ref": "Colossians 3:15",
+          "text": "And let the peace of God rule in your hearts, to the which also ye are called in one body; and be ye thankful."
+        },
+        {
+          "ref": "Ephesians 2:14",
+          "text": "For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us;"
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Psalm 119:165, great peace have they which love what?",
+          "choices": [
+            "Thy law",
+            "Their ease",
+            "The world"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 1,
+          "q": "In Colossians 3:15, let what rule in your hearts?",
+          "choices": [
+            "The fear of men",
+            "The peace of God",
+            "The praise of others"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 2,
+          "q": "In Ephesians 2:14, he is our what?",
+          "choices": [
+            "Our judge alone",
+            "Our peace",
+            "Our hidden treasure"
+          ],
+          "answer": 1
+        }
+      ],
+      "commentary": {
+        "text": "Let nothing exist among you that may divide you; but be united with your bishop, and those that preside over you, as a type and evidence of your immortality.",
+        "father": "St. Ignatius of Antioch",
+        "work": "Epistle to the Magnesians, Chapter 6",
+        "source_url": "https://www.newadvent.org/fathers/0105.htm"
+      }
+    },
+    "2026-12-05": {
+      "side": "On earth, peace",
+      "verses": [
+        {
+          "ref": "Numbers 6:26",
+          "text": "The LORD lift up his countenance upon thee, and give thee peace."
+        },
+        {
+          "ref": "Luke 2:14",
+          "text": "Glory to God in the highest, and on earth peace, good will toward men."
+        },
+        {
+          "ref": "2 Corinthians 13:11",
+          "text": "Finally, brethren, farewell. Be perfect, be of good comfort, be of one mind, live in peace; and the God of love and peace shall be with you."
+        }
+      ],
+      "quiz": [
+        {
+          "verse": 0,
+          "q": "In Numbers 6:26, the LORD lift up his countenance upon thee, and give thee what?",
+          "choices": [
+            "Gold",
+            "Peace",
+            "Land"
+          ],
+          "answer": 1
+        },
+        {
+          "verse": 1,
+          "q": "In Luke 2:14, glory to God in the highest, and on earth what?",
+          "choices": [
+            "Peace, good will toward men",
+            "Fear, and a great silence",
+            "War, until the end"
+          ],
+          "answer": 0
+        },
+        {
+          "verse": 2,
+          "q": "In 2 Corinthians 13:11, live in peace; and who shall be with you?",
+          "choices": [
+            "The princes of this world",
+            "A host of strangers",
+            "The God of love and peace"
+          ],
+          "answer": 2
+        }
+      ],
+      "commentary": {
+        "text": "All these the great Creator and Lord of all has appointed to exist in peace and harmony; while He does good to all, but most abundantly to us who have fled for refuge to His compassions through Jesus Christ our Lord, to whom be glory and majesty for ever and ever. Amen.",
+        "father": "St. Clement of Rome",
+        "work": "Letter to the Corinthians, Chapter 20",
+        "source_url": "https://www.newadvent.org/fathers/1010.htm"
+      }
     }
   },
   "audio_version": "1"

@@ -22,18 +22,28 @@ CNAME (hritey.com), .nojekyll
 
 ## Weekly theme
 
-The site has **one theme per week, Sunday to Saturday** (separate from the X post themes). Each day of the week brings 3 new verses that look at that theme from a different side. The theme shows small under the date as "This week: Joy" and is added to the share text.
+The site has **one theme per week, Sunday to Saturday** (separate from the social-media themes). Each day of the week brings 3 new verses that look at that theme from a different side. The theme shows small under the date as "This week: Hope" and is added to the share text.
 
-Themes live in `data/days.json` under `"weeks"`, keyed by the week's **Sunday** date:
+The planned rotation lives in `data/days.json` under `"schedule"`, starting Sunday 22 November 2026:
+
+1. Hope (22 Nov)
+2. Peace (29 Nov)
+3. Light in the Waiting (6 Dec)
+4. Trust (13 Dec)
+5. Gratitude (20 Dec)
+
+The page picks the latest scheduled Sunday on or before the visitor's date, and only uses a scheduled theme once that week has daily entries. So after approval, Hope shows this week and Peace starts on its own on 29 November. Add the seven days for Light in the Waiting, Trust, and Gratitude before those Sundays, and those weeks will switch the same way, with no extra deploy step on the day.
+
+Themes can also be named under `"weeks"`, keyed by the week's **Sunday** date (this overrides the schedule name if both are present):
 
 ```json
 "weeks": {
   "2026-11-15": { "theme": "Joy" },
-  "2026-11-22": { "theme": "Peace" }
+  "2026-11-22": { "theme": "Hope" }
 }
 ```
 
-A day uses the latest week that starts on or before it. To add a week: add its Sunday to `"weeks"`, then add its 7 days (below). Each day has a `side`: the day's angle on the theme, e.g. `"side": "Joy in trials"`. It shows small under "This week: …" and as "Tomorrow: …" on the quiz score screen the day before. It must say only what that day's three verses say. During fasts and feasts the week's theme can follow the Church calendar.
+To add a week: add it to `"schedule"` (and optionally `"weeks"`), then add its 7 days (below). Each day has a `side`: the day's angle on the theme, e.g. `"side": "We wait in hope"`. It shows small under "This week: …" and as "Tomorrow: …" on the quiz score screen the day before. It must say only what that day's three verses say. During fasts and feasts the week's theme can follow the Church calendar.
 
 ## How to add a day
 

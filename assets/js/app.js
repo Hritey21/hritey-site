@@ -54,11 +54,26 @@
     var past = keys.filter(function (k) { return k <= key; });
     return past.length ? past[past.length - 1] : (keys[keys.length - 1] || null);
   }
-  // Weeks are keyed by their Sunday; use the latest week starting on or before the day.
-  function themeFor(weeks, dayKey) {
-    var starts = Object.keys(weeks || {}).sort().filter(function (k) { return k <= dayKey; });
-    var w = starts.length ? weeks[starts[starts.length - 1]] : null;
-    return w && w.theme ? w.theme : '';
+  // Latest Sunday on or before dayKey. weeks[] can name a theme; schedule.themes
+  // fills in any Sunday that already has daily entries, so the rotation changes by itself.
+  function weekHasDays(days, sunday) {
+    var end = addDays(sunday, 6);
+    return Object.keys(days || {}).some(function (k) { return k >= sunday && k <= end; });
+  }
+  function themeFor(weeks, dayKey, schedule, days) {
+    var map = {};
+    Object.keys(weeks || {}).forEach(function (k) {
+      if (weeks[k] && weeks[k].theme) map[k] = weeks[k].theme;
+    });
+    if (schedule && schedule.themes) {
+      schedule.themes.forEach(function (t) {
+        if (!t || !t.sunday || !t.theme) return;
+        if (map[t.sunday]) return;
+        if (weekHasDays(days, t.sunday)) map[t.sunday] = t.theme;
+      });
+    }
+    var starts = Object.keys(map).sort().filter(function (k) { return k <= dayKey; });
+    return starts.length ? map[starts[starts.length - 1]] : '';
   }
 
   function renderTheme(theme, side) {
@@ -221,7 +236,7 @@
 
   // ---- Share -------------------------------------------------------------
   function shareText(day, theme) {
-    var head = 'Today’s Bread (KJV)' + (theme ? '\nThis week: ' + theme : '');
+    var head = 'Today’s Bread' + (theme ? '\nThis week: ' + theme : '');
     return head + '\n\n' + day.verses.map(function (v) { return v.ref + ' — ' + v.text; }).join('\n\n');
   }
   function setupShare(day, theme) {
@@ -229,7 +244,7 @@
     var full = shareText(day, theme);
     var enc = encodeURIComponent;
     var xText = (full.length + 24 <= 280) ? full :
-      'Today’s Bread (KJV)' + (theme ? ' · This week: ' + theme : '') + '\n' + refs.join(' · ');
+      'Today’s Bread' + (theme ? ' · This week: ' + theme : '') + '\n' + refs.join(' · ');
     $('share-whatsapp').href = 'https://wa.me/?text=' + enc(full + '\n\n' + SITE);
     $('share-x').href = 'https://x.com/intent/post?text=' + enc(xText) + '&url=' + enc(SITE);
     if ($('share-facebook')) $('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + enc(SITE);
@@ -452,7 +467,15 @@
   window.HRITEY = { ethiopianFor: ethiopianFor, pickDay: pickDay, themeFor: themeFor };
   window.HRITEY.speakable = function (t) { return listen.speakable(t); };
 
+  // Optional ?date=YYYY-MM-DD for local preview only; ignored if invalid.
   var today = new Date();
+  try {
+    var q = new URLSearchParams(window.location.search).get('date');
+    if (q && /^\d{4}-\d{2}-\d{2}$/.test(q)) {
+      var forced = parseKey(q);
+      if (!isNaN(forced.getTime()) && isoDate(forced) === q) today = forced;
+    }
+  } catch (e) {}
   var todayKey = isoDate(today);
   renderDate(today);
 
@@ -463,7 +486,7 @@
       var key = pickDay(days, todayKey);
       if (!key) throw new Error('no days');
       var day = days[key];
-      var theme = themeFor(data.weeks, key);
+      var theme = themeFor(data.weeks, key, data.schedule, days);
       var next = days[addDays(key, 1)];
       renderTheme(theme, day.side);
       renderNotice(key, todayKey);
